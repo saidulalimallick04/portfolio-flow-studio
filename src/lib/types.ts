@@ -9,7 +9,9 @@ export type Project = {
   category: "Full Stack" | "Web" | "AI" | "API" | "Frontend" | "Backend";
   imageUrl: string;
   imageHint: string;
-  link: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  status: "completed" | "incomplete";
   year: string;
 };
 
@@ -39,7 +41,7 @@ export type Profile = {
   id: number;
   name: string;
   url: string;
-  icon: "github" | "linkedin" | "twitter";
+  icon: "github" | "linkedin" | "twitter" | "facebook" | "instagram";
 };
 
 export type Skill = {

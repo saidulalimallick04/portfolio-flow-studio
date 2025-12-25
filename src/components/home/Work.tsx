@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -13,9 +12,10 @@ import { Badge } from "@/components/ui/badge";
 import { projectsData, projectsSectionData } from "@/lib/placeholder-data";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowUpRight, Calendar, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
+import { ProjectCard } from "@/components/projects/ProjectCard";
 
 export function Work() {
   const { ref, inView } = useScrollAnimation();
@@ -40,52 +40,8 @@ export function Work() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projectsData.slice(0, 3).map((project) => (
-              <Card key={project.id} className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                {project.imageUrl && (
-                  <div className="relative aspect-video overflow-hidden">
-                    <Image
-                      src={project.imageUrl}
-                      alt={project.title}
-                      data-ai-hint={project.imageHint}
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                     <div className="absolute bottom-4 right-4">
-                        <span className="inline-block rounded-full bg-accent/80 px-3 py-1 text-xs font-semibold text-accent-foreground backdrop-blur-sm">
-                            {project.category}
-                        </span>
-                     </div>
-                  </div>
-                )}
-                <CardHeader className="flex-grow">
-                  <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>{project.year}</span>
-                  </div>
-                  <CardDescription className="pt-2">{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="mt-auto">
-                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter>
-                   <Button asChild variant="outline" className="w-full group/button">
-                      <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                          View Project
-                          <ArrowUpRight className="h-4 w-4 ml-2 transition-transform group-hover/button:-translate-y-1 group-hover/button:translate-x-1" />
-                      </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
         <div className="mt-12 text-center">
           <Button asChild size="lg" variant="outline">

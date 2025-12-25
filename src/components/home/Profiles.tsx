@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -14,6 +14,8 @@ const iconMap = {
   github: Github,
   linkedin: Linkedin,
   twitter: Twitter,
+  facebook: Facebook,
+  instagram: Instagram,
 };
 
 export function Profiles() {
@@ -44,8 +46,8 @@ export function Profiles() {
               <Link href={profile.url} key={profile.id} target="_blank" rel="noopener noreferrer" className="group">
                 <Card className="flex h-full flex-col items-center justify-center p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-accent/20">
                   <CardContent className="p-0 text-center">
-                      <Icon className="h-16 w-16 text-accent transition-transform duration-300 group-hover:scale-110" />
-                      <p className="mt-4 text-xl font-bold">{profile.name}</p>
+                    <Icon className="h-16 w-16 text-accent transition-transform duration-300 group-hover:scale-110" />
+                    <p className="mt-4 text-xl font-bold">{profile.name}</p>
                   </CardContent>
                 </Card>
               </Link>

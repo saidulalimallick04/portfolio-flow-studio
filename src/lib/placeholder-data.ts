@@ -14,12 +14,12 @@ import { Award, Briefcase, GraduationCap, Trophy, Cpu } from "lucide-react";
 export const homePageData = {
   about: {
     sectionTitle: "About Me",
-    name: "Sami",
-    title: "AI/ML Student & Developer",
-    bio: "Motivated B.Tech Computer Science student specialized in Artificial Intelligence and Machine Learning, passionate about developing intelligent applications.",
+    name: "Saidul Ali Mallick",
+    title: "Backend Sage | Backend Developer",
+    bio: "I build powerful systems behind the scenes—simple, secure, and scalable. Rooted in code, driven by curiosity, and inspired by nature.",
     paragraphs: [
-      "Motivated B.Tech Computer Science student specialized in Artificial Intelligence and Machine Learning, passionate about developing intelligent applications, solving complex problems, and delivering innovative, efficient, and data driven solutions.",
-      "Eager to develop technical expertise, learn continuously, and contribute meaningfully to a dynamic team environment in both development and project management.",
+      "I build powerful systems behind the scenes—simple, secure, and scalable. Rooted in code, driven by curiosity, and inspired by nature.",
+      "Specialized in Python, Django, and Machine Learning, I aim to solve complex problems and deliver innovative, efficient, and data-driven solutions.",
     ],
   },
 };
@@ -34,20 +34,32 @@ export const profilesData: Profile[] = [
   {
     id: 1,
     name: "GitHub",
-    url: "https://github.com/developersami04",
+    url: "https://github.com/saidulalimallick04",
     icon: "github",
   },
   {
     id: 2,
     name: "LinkedIn",
-    url: "https://linkedin.com",
+    url: "https://www.linkedin.com/in/saidulalimallick04",
     icon: "linkedin",
   },
   {
     id: 3,
     name: "Twitter",
-    url: "https://x.com/DevSami04",
+    url: "https://x.com/saidulmallick04",
     icon: "twitter",
+  },
+  {
+    id: 4,
+    name: "Facebook",
+    url: "https://facebook.com/saidulalimallick04",
+    icon: "facebook",
+  },
+  {
+    id: 5,
+    name: "Instagram",
+    url: "https://instagram.com/saidulalimallick04",
+    icon: "instagram",
   },
 ];
 
@@ -71,7 +83,9 @@ export const projectsData: Project[] = [
     category: "Full Stack",
     imageUrl: "/assets/imgs/web-1.jpg",
     imageHint: "project management dashboard",
-    link: "#",
+    liveUrl: "https://apexsky.onrender.com",
+    githubUrl: "https://github.com/saidulalimallick04/apexsky-projects-management",
+    status: "incomplete",
     year: "2025",
   },
   {
@@ -82,7 +96,9 @@ export const projectsData: Project[] = [
     category: "AI",
     imageUrl: "/assets/imgs/article-animalclassifier.jpeg",
     imageHint: "ai neural network",
-    link: "#",
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "completed",
     year: "2025",
   },
   {
@@ -93,7 +109,9 @@ export const projectsData: Project[] = [
     category: "Web",
     imageUrl: "/assets/imgs/web-2.jpg",
     imageHint: "task list app",
-    link: "#",
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "completed",
     year: "2025",
   },
   {
@@ -104,7 +122,9 @@ export const projectsData: Project[] = [
     category: "AI",
     imageUrl: "/assets/imgs/advertising-2.jpg",
     imageHint: "house price prediction",
-    link: "#",
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "completed",
     year: "2024",
   },
   {
@@ -115,7 +135,9 @@ export const projectsData: Project[] = [
     category: "AI",
     imageUrl: "/assets/imgs/advertising-1.jpg",
     imageHint: "diabetes prediction",
-    link: "#",
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "incomplete",
     year: "2024",
   },
   {
@@ -126,7 +148,9 @@ export const projectsData: Project[] = [
     category: "Web",
     imageUrl: "/assets/imgs/web-3.jpg",
     imageHint: "user profile",
-    link: "#",
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "incomplete",
     year: "2024",
   },
   {
@@ -137,7 +161,9 @@ export const projectsData: Project[] = [
     category: "Backend",
     imageUrl: "/assets/imgs/branding-1.jpg",
     imageHint: "system player",
-    link: "#",
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "incomplete",
     year: "2024",
   },
   {
@@ -148,7 +174,9 @@ export const projectsData: Project[] = [
     category: "Backend",
     imageUrl: "/assets/imgs/branding-2.jpg",
     imageHint: "restaurant management",
-    link: "#",
+    liveUrl: "#",
+    githubUrl: "#",
+    status: "completed",
     year: "2024",
   },
 ];

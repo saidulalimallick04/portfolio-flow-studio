@@ -29,7 +29,7 @@ export function About() {
         </div>
         <div className="mt-10">
             <Button asChild size="lg">
-                <Link href="mailto:your-email@example.com">
+                <Link href="mailto:saidulmallick753@gmail.com">
                     Hire Me
                     <Send className="ml-2 h-4 w-4" />
                 </Link>

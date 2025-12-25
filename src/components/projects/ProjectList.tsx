@@ -1,10 +1,14 @@
-"use client";
-
 import { useState, useMemo } from "react";
+import { ProjectCard } from "@/components/projects/ProjectCard";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { cn } from "@/lib/utils";
+import { Search, LayoutGrid, List, Calendar, ArrowUpRight } from "lucide-react";
+import { projectsData, projectsSectionData } from "@/lib/placeholder-data";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Calendar, Search } from "lucide-react";
-import { projectsData, projectsSectionData } from "@/lib/placeholder-data";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -13,14 +17,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { cn } from "@/lib/utils";
+
 
 export function ProjectList() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const { ref, inView } = useScrollAnimation();
 
   const filteredProjects = useMemo(() => {
@@ -58,78 +59,122 @@ export function ProjectList() {
           </p>
         </div>
 
-        <div className="mb-12 max-w-xl mx-auto">
-          <div className="group relative rounded-full border bg-card p-2 shadow-sm transition-all focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 focus-within:ring-offset-background">
-            <div className="relative flex items-center">
-              <Search className="absolute left-3 h-5 w-5 text-muted-foreground transition-colors group-focus-within:text-accent" />
-              <Input
-                type="search"
-                placeholder="Search projects by title, description, or tech..."
-                className="w-full rounded-full border-none bg-transparent pl-10 focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+        <div className="sticky top-16 z-30 -mx-4 px-4 py-4 mb-8 bg-background/80 backdrop-blur-md transition-all">
+          <div className="max-w-4xl mx-auto flex flex-row gap-2 items-center">
+            <div className="flex-1 min-w-0 relative rounded-full border bg-card p-2 shadow-sm transition-all focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 focus-within:ring-offset-background">
+              <div className="relative flex items-center">
+                <Search className="absolute left-3 h-5 w-5 text-muted-foreground transition-colors group-focus-within:text-accent" />
+                <Input
+                  type="search"
+                  placeholder="Search projects..."
+                  className="w-full rounded-full border-none bg-transparent pl-10 focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="flex shrink-0 bg-muted p-1 rounded-lg">
+              <Button
+                variant={viewMode === "grid" ? "default" : "ghost"}
+                size="sm"
+                className={cn("gap-2 px-3 transition-all", viewMode === "grid" && "shadow-sm")}
+                onClick={() => setViewMode("grid")}
+              >
+                <LayoutGrid className="h-4 w-4" />
+                <span className="sr-only sm:not-sr-only">Grid</span>
+              </Button>
+              <Button
+                variant={viewMode === "list" ? "default" : "ghost"}
+                size="sm"
+                className={cn("gap-2 px-3 transition-all", viewMode === "list" && "shadow-sm")}
+                onClick={() => setViewMode("list")}
+              >
+                <List className="h-4 w-4" />
+                <span className="sr-only sm:not-sr-only">List</span>
+              </Button>
             </div>
           </div>
         </div>
 
         {filteredProjects.length > 0 ? (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className={cn(
+            "grid gap-8",
+            viewMode === "grid" ? "md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+          )}>
             {filteredProjects.map((project) => (
-              <Card
-                key={project.id}
-                className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-              >
-                {project.imageUrl && (
-                  <div className="relative aspect-video overflow-hidden">
-                    <Image
-                      src={project.imageUrl}
-                      alt={project.title}
-                      data-ai-hint={project.imageHint}
-                      width={600}
-                      height={400}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-4 right-4">
-                      <span className="inline-block rounded-full bg-accent/80 px-3 py-1 text-xs font-semibold text-accent-foreground backdrop-blur-sm">
-                        {project.category}
-                      </span>
+              viewMode === "grid" ? (
+                <ProjectCard key={project.id} project={project} />
+              ) : (
+                <Card key={project.id} className="flex flex-col md:flex-row overflow-hidden hover:shadow-lg transition-shadow">
+                  {project.imageUrl && (
+                    <div className="relative w-full md:w-64 aspect-video md:aspect-auto">
+                      <Image
+                        src={project.imageUrl}
+                        alt={project.title}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute top-2 right-2 md:hidden">
+                        <span className={cn(
+                          "inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold backdrop-blur-sm",
+                          project.status === 'completed' ? "bg-green-500/80 text-white" : "bg-yellow-500/80 text-white"
+                        )}>
+                          {project.status === 'completed' ? 'Completed' : 'In Progress'}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="inline-block rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent-foreground border border-accent/20">
+                            {project.category}
+                          </span>
+                          <span className={cn(
+                            "hidden md:inline-block rounded-full px-2 py-0.5 text-xs font-semibold",
+                            project.status === 'completed' ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" : "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400"
+                          )}>
+                            {project.status === 'completed' ? 'Completed' : 'In Progress'}
+                          </span>
+                        </div>
+                        <h3 className="text-2xl font-bold">{project.title}</h3>
+                      </div>
+                      <div className="flex items-center text-sm text-muted-foreground whitespace-nowrap ml-4">
+                        <Calendar className="mr-1 h-3 w-3" />
+                        {project.year}
+                      </div>
+                    </div>
+                    <p className="mt-2 text-muted-foreground line-clamp-2 md:line-clamp-none flex-grow">
+                      {project.description}
+                    </p>
+                    <div className="mt-auto grid grid-cols-1 md:grid-cols-[1fr,auto] gap-4 items-end">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.slice(0, 5).map(tag => (
+                          <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
+                        ))}
+                      </div>
+                      <div className="flex gap-3">
+                        {project.liveUrl && project.liveUrl !== '#' && (
+                          <Button asChild size="sm" variant="outline">
+                            <Link href={project.liveUrl} target="_blank">
+                              Live Demo <ArrowUpRight className="ml-1 h-3 w-3" />
+                            </Link>
+                          </Button>
+                        )}
+                        {project.githubUrl && project.githubUrl !== '#' && (
+                          <Button asChild size="sm" variant="secondary">
+                            <Link href={project.githubUrl} target="_blank">
+                              GitHub <ArrowUpRight className="ml-1 h-3 w-3" />
+                            </Link>
+                          </Button>
+                        )}
+                      </div>
                     </div>
                   </div>
-                )}
-                <CardHeader className="flex-grow">
-                  <CardTitle className="text-2xl font-bold">
-                    {project.title}
-                  </CardTitle>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>{project.year}</span>
-                  </div>
-                  <CardDescription className="pt-2">{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="mt-auto">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild variant="outline" className="w-full group/button">
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Project
-                      <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover/button:-translate-y-1 group-hover/button:translate-x-1" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+                </Card>
+              )
             ))}
           </div>
         ) : (

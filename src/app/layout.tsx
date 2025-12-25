@@ -10,8 +10,8 @@ import { ThunderCursor } from '@/components/shared/ThunderCursor';
 import { MusicPlayer } from '@/components/shared/MusicPlayer';
 
 export const metadata: Metadata = {
-  title: 'Sami | PortfolioFlow | A Creative Portfolio',
-  description: 'A personal portfolio showcasing projects, experience, and creative work.',
+  title: 'Saidul Ali Mallick | Backend Sage | Portfolio',
+  description: 'I build powerful systems behind the scenes—simple, secure, and scalable. Rooted in code, driven by curiosity, and inspired by nature.',
 };
 
 export default function RootLayout({

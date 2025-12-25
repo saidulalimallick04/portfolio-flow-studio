@@ -1,6 +1,15 @@
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
 import { Container } from "./Container";
 import Link from "next/link";
+import { profilesData } from "@/lib/placeholder-data";
+
+const iconMap = {
+  github: Github,
+  linkedin: Linkedin,
+  twitter: Twitter,
+  facebook: Facebook,
+  instagram: Instagram,
+};
 
 export function Footer() {
   return (
@@ -8,18 +17,23 @@ export function Footer() {
       <Container className="py-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} PortfolioFlow. All rights reserved.
+            &copy; {new Date().getFullYear()} Saidul Ali Mallick. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" aria-label="Twitter">
-              <Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-accent" />
-            </Link>
-            <Link href="#" aria-label="GitHub">
-              <Github className="h-6 w-6 text-muted-foreground transition-colors hover:text-accent" />
-            </Link>
-            <Link href="#" aria-label="LinkedIn">
-              <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-accent" />
-            </Link>
+            {profilesData.map((profile) => {
+              const Icon = iconMap[profile.icon];
+              return (
+                <Link
+                  key={profile.id}
+                  href={profile.url}
+                  aria-label={profile.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon className="h-5 w-5 text-muted-foreground transition-colors hover:text-accent" />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </Container>
