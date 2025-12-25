@@ -1,0 +1,94 @@
+
+{
+    "home": {
+        "profilePictures": [
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758393188/hero-section-03_hakijh.png", "imageHint": "professional headshot" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758393188/hero-section-02_hkoatt.png", "imageHint": "person coding" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758393187/hero-section-06_rzagbo.png", "imageHint": "Sami Creative Mind" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758393187/hero-section-05_s6lozl.png", "imageHint": "Developer Sami" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758393187/hero-section-01_cjnjtl.png", "imageHint": "Creative Sami" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758393187/hero-section-04_bkn0yv.png", "imageHint": "Sami on Fire" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758450362/hero-section-07_rmzezl.png", "imageHint": "Sami on Fire" }
+        ],
+        "backgrounds": [
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758438503/background-images-02_psx2lz.jpg", "imageHint": "abstract moon background" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758438503/background-images-06_hko8os.jpg", "imageHint": "zenitsu thunder stream" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758438503/background-images-01_cu3dfs.jpg", "imageHint": "tanjiro dragon background" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758438503/background-images-03_ukvotr.jpg", "imageHint": "zenitsu thunder environment" },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758438503/background-images-04_luqnzv.jpg", "imageHint": "zenitsu lighting katana " },
+            { "imageUrl": "https://res.cloudinary.com/dcfurdz3u/image/upload/v1758438503/background-images-05_pdwyrr.jpg", "imageHint": "tanjiro fall in infinity castel" }
+        ]
+    },
+    "collaborators": [
+        { "imageUrl": "https://picsum.photos/seed/601/1200/600", "imageHint": "team meeting" },
+        { "imageUrl": "https://picsum.photos/seed/602/1200/600", "imageHint": "people working" },
+        { "imageUrl": "https://picsum.photos/seed/603/1200/600", "imageHint": "office brainstorming" },
+        { "imageUrl": "https://picsum.photos/seed/604/1200/600", "imageHint": "collaborative workspace" },
+        { "imageUrl": "https://picsum.photos/seed/605/1200/600", "imageHint": "diverse team" },
+        { "imageUrl": "https://picsum.photos/seed/606/1200/600", "imageHint": "group discussion" },
+        { "imageUrl": "https://picsum.photos/seed/607/1200/600", "imageHint": "creative professionals" },
+        { "imageUrl": "https://picsum.photos/seed/608/1200/600", "imageHint": "project planning" },
+        { "imageUrl": "https://picsum.photos/seed/609/1200/600", "imageHint": "successful team" },
+        { "imageUrl": "https://picsum.photos/seed/610/1200/600", "imageHint": "modern office" }
+    ],
+    "hobbies": [
+        { "imageUrl": "https://picsum.photos/seed/401/1200/600", "imageHint": "hiking sunset" },
+        { "imageUrl": "https://picsum.photos/seed/405/1200/600", "imageHint": "painting canvas" },
+        { "imageUrl": "https://picsum.photos/seed/406/1200/600", "imageHint": "reading book" },
+        { "imageUrl": "https://picsum.photos/seed/407/1200/600", "imageHint": "playing guitar" },
+        { "imageUrl": "https://picsum.photos/seed/408/1200/600", "imageHint": "cooking food" },
+        { "imageUrl": "https://picsum.photos/seed/409/1200/600", "imageHint": "gardening plants" },
+        { "imageUrl": "https://picsum.photos/seed/410/1200/600", "imageHint": "video games" },
+        { "imageUrl": "https://picsum.photos/seed/411/1200/600", "imageHint": "person meditating" },
+        { "imageUrl": "https://picsum.photos/seed/412/1200/600", "imageHint": "pottery wheel" },
+        { "imageUrl": "https://picsum.photos/seed/413/1200/600", "imageHint": "writing journal" }
+    ],
+    "journey": [
+        { "imageUrl": "https://picsum.photos/seed/901/1200/600", "imageHint": "winding road" },
+        { "imageUrl": "https://picsum.photos/seed/902/1200/600", "imageHint": "mountain path" },
+        { "imageUrl": "https://picsum.photos/seed/903/1200/600", "imageHint": "old map" },
+        { "imageUrl": "https://picsum.photos/seed/904/1200/600", "imageHint": "compass journey" },
+        { "imageUrl": "https://picsum.photos/seed/905/1200/600", "imageHint": "forest trail" },
+        { "imageUrl": "https://picsum.photos/seed/906/1200/600", "imageHint": "starry night" },
+        { "imageUrl": "https://picsum.photos/seed/907/1200/600", "imageHint": "railway tracks" },
+        { "imageUrl": "https://picsum.photos/seed/908/1200/600", "imageHint": "footprints sand" },
+        { "imageUrl": "https://picsum.photos/seed/909/1200/600", "imageHint": "city skyline" },
+        { "imageUrl": "https://picsum.photos/seed/910/1200/600", "imageHint": "open book" }
+    ],
+    "projects": [
+        { "imageUrl": "https://picsum.photos/seed/501/1200/600", "imageHint": "coding workspace" },
+        { "imageUrl": "https://picsum.photos/seed/502/1200/600", "imageHint": "blueprint design" },
+        { "imageUrl": "https://picsum.photos/seed/503/1200/600", "imageHint": "server room" },
+        { "imageUrl": "https://picsum.photos/seed/504/1200/600", "imageHint": "tech diagram" },
+        { "imageUrl": "https://picsum.photos/seed/505/1200/600", "imageHint": "glowing code" },
+        { "imageUrl": "https://picsum.photos/seed/506/1200/600", "imageHint": "data analytics" },
+        { "imageUrl": "https://picsum.photos/seed/507/1200/600", "imageHint": "abstract network" },
+        { "imageUrl": "https://picsum.photos/seed/508/1200/600", "imageHint": "developer desk" },
+        { "imageUrl": "https://picsum.photos/seed/509/1200/600", "imageHint": "cloud infrastructure" },
+        { "imageUrl": "https://picsum.photos/seed/510/1200/600", "imageHint": "futuristic UI" }
+    ],
+    "skills": [
+        { "imageUrl": "https://picsum.photos/seed/801/1200/600", "imageHint": "modern tech" },
+        { "imageUrl": "https://picsum.photos/seed/802/1200/600", "imageHint": "glowing code" },
+        { "imageUrl": "https://picsum.photos/seed/803/1200/600", "imageHint": "data analytics" },
+        { "imageUrl": "https://picsum.photos/seed/804/1200/600", "imageHint": "circuit board" },
+        { "imageUrl": "https://picsum.photos/seed/805/1200/600", "imageHint": "developer at work" },
+        { "imageUrl": "https://picsum.photos/seed/806/1200/600", "imageHint": "abstract tech" },
+        { "imageUrl": "https://picsum.photos/seed/807/1200/600", "imageHint": "server farm" },
+        { "imageUrl": "https://picsum.photos/seed/808/1200/600", "imageHint": "user interface" },
+        { "imageUrl": "https://picsum.photos/seed/809/1200/600", "imageHint": "network nodes" },
+        { "imageUrl": "https://picsum.photos/seed/810/1200/600", "imageHint": "binary code" }
+    ],
+    "studio": [
+        { "imageUrl": "https://picsum.photos/seed/201/1200/800", "imageHint": "creative studio" },
+        { "imageUrl": "https://picsum.photos/seed/202/1200/800", "imageHint": "camera lens" },
+        { "imageUrl": "https://picsum.photos/seed/203/1200/800", "imageHint": "art gallery" },
+        { "imageUrl": "https://picsum.photos/seed/204/1200/800", "imageHint": "editing suite" },
+        { "imageUrl": "https://picsum.photos/seed/205/1200/800", "imageHint": "photography gear" },
+        { "imageUrl": "https://picsum.photos/seed/206/1200/800", "imageHint": "paint brushes" },
+        { "imageUrl": "https://picsum.photos/seed/207/1200/800", "imageHint": "film set" },
+        { "imageUrl": "https://picsum.photos/seed/208/1200/800", "imageHint": "sculpture studio" },
+        { "imageUrl": "https://picsum.photos/seed/209/1200/800", "imageHint": "drone flying" },
+        { "imageUrl": "https://picsum.photos/seed/210/1200/800", "imageHint": "graphic design" }
+    ]
+}
