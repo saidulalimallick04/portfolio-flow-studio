@@ -11,6 +11,7 @@ export type Project = {
   imageHint: string;
   liveUrl?: string;
   githubUrl?: string;
+  alternativeLink?: string;
   status: "completed" | "incomplete";
   year: string;
 };

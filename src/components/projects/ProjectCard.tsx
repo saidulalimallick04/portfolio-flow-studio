@@ -101,6 +101,18 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                         </Badge>
                     ))}
                 </div>
+                {project.alternativeLink && (
+                    <div className="mt-4 text-xs">
+                        <Link
+                            href={project.alternativeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground underline hover:text-primary"
+                        >
+                            Alternative Link
+                        </Link>
+                    </div>
+                )}
             </CardContent>
             <CardFooter className="flex gap-2">
                 {project.liveUrl && project.liveUrl !== "#" && (

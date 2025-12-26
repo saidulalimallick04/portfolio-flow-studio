@@ -155,21 +155,33 @@ export function ProjectList() {
                           <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
                         ))}
                       </div>
-                      <div className="flex gap-3">
-                        {project.liveUrl && project.liveUrl !== '#' && (
-                          <Button asChild size="sm" variant="outline">
-                            <Link href={project.liveUrl} target="_blank">
-                              Live Demo <ArrowUpRight className="ml-1 h-3 w-3" />
-                            </Link>
-                          </Button>
+                      <div className="flex flex-col items-end gap-2">
+                        {project.alternativeLink && (
+                          <Link
+                            href={project.alternativeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-muted-foreground underline hover:text-primary mb-1"
+                          >
+                            Alternative Link
+                          </Link>
                         )}
-                        {project.githubUrl && project.githubUrl !== '#' && (
-                          <Button asChild size="sm" variant="secondary">
-                            <Link href={project.githubUrl} target="_blank">
-                              GitHub <ArrowUpRight className="ml-1 h-3 w-3" />
-                            </Link>
-                          </Button>
-                        )}
+                        <div className="flex gap-3">
+                          {project.liveUrl && project.liveUrl !== '#' && (
+                            <Button asChild size="sm" variant="outline">
+                              <Link href={project.liveUrl} target="_blank">
+                                Live Demo <ArrowUpRight className="ml-1 h-3 w-3" />
+                              </Link>
+                            </Button>
+                          )}
+                          {project.githubUrl && project.githubUrl !== '#' && (
+                            <Button asChild size="sm" variant="secondary">
+                              <Link href={project.githubUrl} target="_blank">
+                                GitHub <ArrowUpRight className="ml-1 h-3 w-3" />
+                              </Link>
+                            </Button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

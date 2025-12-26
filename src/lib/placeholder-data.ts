@@ -85,6 +85,7 @@ export const projectsData: Project[] = [
     imageHint: "project management dashboard",
     liveUrl: "https://apexsky.onrender.com",
     githubUrl: "https://github.com/saidulalimallick04/apexsky-projects-management",
+    alternativeLink: "https://apexsky-backup.onrender.com",
     status: "incomplete",
     year: "2025",
   },
