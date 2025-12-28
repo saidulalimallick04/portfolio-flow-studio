@@ -18,14 +18,14 @@ export function Hero() {
   useEffect(() => {
     const heroBackgrounds = heroImages.home.backgrounds as HeroImage[];
     const profilePictures = heroImages.home.profilePictures as HeroImage[];
-    
+
     setHeroBg(heroBackgrounds[Math.floor(Math.random() * heroBackgrounds.length)]);
     setProfilePic(profilePictures[Math.floor(Math.random() * profilePictures.length)]);
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-background">
-       {heroBg && (
+    <section className="relative overflow-hidden bg-background mx-4 mt-24 rounded-3xl border shadow-2xl">
+      {heroBg && (
         <>
           <Image
             src={heroBg.imageUrl}
@@ -39,7 +39,7 @@ export function Hero() {
           <div className="animated-aurora absolute inset-0" />
         </>
       )}
-      <Container className="relative z-10 py-20 sm:py-32">
+      <Container className="relative z-10 py-10 lg:py-14">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           {/* Text Content */}
           <div className="max-w-xl text-center md:text-left">

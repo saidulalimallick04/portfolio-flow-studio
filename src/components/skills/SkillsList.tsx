@@ -38,7 +38,7 @@ export function SkillsList() {
   const skillTypes = [...new Set(skillsData.map((skill) => skill.type))];
 
   return (
-    <div id="skills" className="py-16 md:py-24">
+    <div id="skills" className="py-24">
       <SkillSection title="Top Skills" skills={topSkills} />
 
       {skillTypes.map((type) => (

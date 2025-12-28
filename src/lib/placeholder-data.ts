@@ -63,25 +63,19 @@ export const profilesData: Profile[] = [
   },
 ];
 
-// Projects Page Data
-export const projectsPageData = {
-  title: "My Projects",
-  description: "Here is a collection of my work, demonstrating my skills in design and development."
-};
-
 export const projectsSectionData = {
-  title: "Academic Projects",
+  title: "Projects",
   description: "A selection of projects that I'm proud of."
 };
 
 export const projectsData: Project[] = [
   {
     id: 1,
-    title: "Apex-Sky – Projects Management",
+    title: "Apex-Sky - Projects Management",
     description: "A user-friendly web-application that allows users to manage projects, details, collaborations etc. in one platform and also using API they can fetch their projects from the platform to other sites as per their needs. (Still working)",
     tags: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "Bootstrap"],
     category: "Full Stack",
-    imageUrl: "/assets/imgs/web-1.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=800&auto=format&fit=crop",
     imageHint: "project management dashboard",
     liveUrl: "https://apexsky.onrender.com",
     githubUrl: "https://github.com/saidulalimallick04/apexsky-projects-management",
@@ -95,7 +89,7 @@ export const projectsData: Project[] = [
     description: "Implements a deep learning-based classifier to distinguish between cats and dogs. Users can upload images for instant classification result.",
     tags: ["Deep Learning", "Python", "Streamlit"],
     category: "AI",
-    imageUrl: "/assets/imgs/article-animalclassifier.jpeg",
+    imageUrl: "https://images.unsplash.com/photo-1555685812-4b943f3bec0f?q=80&w=800&auto=format&fit=crop",
     imageHint: "ai neural network",
     liveUrl: "#",
     githubUrl: "#",
@@ -108,7 +102,7 @@ export const projectsData: Project[] = [
     description: "A user-friendly task scheduling web application, where user can create, complete, track task progress. So that they can always stay organized by accessing from anywhere using authentication.",
     tags: ["Python", "Django", "SQLite3", "HTML", "CSS", "Bootstrap"],
     category: "Web",
-    imageUrl: "/assets/imgs/web-2.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=800&auto=format&fit=crop",
     imageHint: "task list app",
     liveUrl: "#",
     githubUrl: "#",
@@ -121,7 +115,7 @@ export const projectsData: Project[] = [
     description: "AI model to predict house prices in Bangalore.",
     tags: ["AI", "Machine Learning"],
     category: "AI",
-    imageUrl: "/assets/imgs/advertising-2.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
     imageHint: "house price prediction",
     liveUrl: "#",
     githubUrl: "#",
@@ -134,7 +128,7 @@ export const projectsData: Project[] = [
     description: "Logistic Regression model for diabetes prediction.",
     tags: ["AI", "Machine Learning", "Logistic Regression"],
     category: "AI",
-    imageUrl: "/assets/imgs/advertising-1.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
     imageHint: "diabetes prediction",
     liveUrl: "#",
     githubUrl: "#",
@@ -147,7 +141,7 @@ export const projectsData: Project[] = [
     description: "User profile management system built with Django.",
     tags: ["Django", "Web"],
     category: "Web",
-    imageUrl: "/assets/imgs/web-3.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop",
     imageHint: "user profile",
     liveUrl: "#",
     githubUrl: "#",
@@ -156,25 +150,25 @@ export const projectsData: Project[] = [
   },
   {
     id: 7,
-    title: "The System Player",
-    description: "Backend system player application.",
-    tags: ["Backend"],
-    category: "Backend",
-    imageUrl: "/assets/imgs/branding-1.jpg",
-    imageHint: "system player",
+    title: "SMS Spam Classifier",
+    description: "A machine learning model to classify SMS messages as spam or not spam.",
+    tags: ["Machine Learning", "Python", "NLP"],
+    category: "AI",
+    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
+    imageHint: "code matrix",
     liveUrl: "#",
     githubUrl: "#",
-    status: "incomplete",
+    status: "completed",
     year: "2024",
   },
   {
     id: 8,
-    title: "Heavenly-Bytes",
-    description: "Restaurants Management System.",
-    tags: ["Backend", "Management"],
-    category: "Backend",
-    imageUrl: "/assets/imgs/branding-2.jpg",
-    imageHint: "restaurant management",
+    title: "Spotify 50k+ Song Analysis",
+    description: "Exploratory Data Analysis (EDA) of 50k+ Spotify songs.",
+    tags: ["Data Science", "Python", "EDA"],
+    category: "AI",
+    imageUrl: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=800&auto=format&fit=crop",
+    imageHint: "earphones",
     liveUrl: "#",
     githubUrl: "#",
     status: "completed",
@@ -194,7 +188,7 @@ export const collaboratorsPageData = {
     { imageUrl: "https://picsum.photos/seed/603/400/400", imageHint: "creative office" },
   ] as HeroImage[],
   team: {
-    title: "Team",
+    title: "Worked or Collaborated With ...",
     description: "A diverse group of passionate professionals, each bringing unique skills and experiences to drive innovation and excellence in every project we undertake."
   }
 };
@@ -202,34 +196,34 @@ export const collaboratorsPageData = {
 export const collaboratorsData: Collaborator[] = [
   {
     id: 1,
-    name: "Alex Johnson",
+    name: "Supriya Khanra",
     title: "Project Manager",
     summary: "Dedicated to ensuring customer satisfaction and success, with a proactive approach to client support and retention.",
-    imageUrl: "https://picsum.photos/seed/602/400/400",
+    imageUrl: "https://github.com/supriyakhanra.png",
     imageHint: "professional person"
   },
   {
     id: 2,
-    name: "Samantha Lee",
-    title: "Lead Designer",
+    name: "Anshu Gupta",
+    title: "Software Engineer",
     summary: "Operations specialist with a background in scaling startups, ensuring smooth and efficient company operations.",
-    imageUrl: "https://picsum.photos/seed/603/400/400",
+    imageUrl: "https://github.com/Anshu370.png",
     imageHint: "creative office"
   },
   {
     id: 3,
-    name: "Michael Chen",
-    title: "CTO",
+    name: "Pranjal Debnath",
+    title: "Software Engineer",
     summary: "Passionate product manager focused on delivering user-centric solutions that meet market needs.",
-    imageUrl: "https://picsum.photos/seed/604/400/400",
+    imageUrl: "https://github.com/prangit95.png",
     imageHint: "thoughtful person"
   },
   {
     id: 4,
-    name: "James Wilson",
-    title: "Lead Engineer",
+    name: "Sneha Das",
+    title: "Software Engineer",
     summary: "Technical guru with a passion for developing scalable and secure cloud-based applications.",
-    imageUrl: "https://picsum.photos/seed/602/400/400",
+    imageUrl: "https://github.com/WanderSusie.png",
     imageHint: "professional person"
   },
 ];

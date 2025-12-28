@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Container } from "@/components/shared/Container";
 import { CollaboratorsList } from "@/components/collaborators/CollaboratorsList";
-import { collaboratorsPageData } from "@/lib/placeholder-data";
+import { collaboratorsPageData, collaboratorsData } from "@/lib/placeholder-data";
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
 
@@ -11,80 +11,50 @@ export const metadata = {
   description: "People I've had the pleasure to work with.",
 };
 
-const CollaboratorImage = ({
-  imageUrl,
-  imageHint,
-  className,
-}: {
-  imageUrl: string;
-  imageHint: string;
-  className?: string;
-}) => {
-  return (
-    <figure
-      className={cn(
-        "relative w-44 h-44 cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-        className
-      )}
-    >
-      <Image
-        src={imageUrl}
-        alt=""
-        data-ai-hint={imageHint}
-        fill
-        className="object-cover rounded-md"
-      />
-    </figure>
-  );
-};
-
 const CollaboratorsPage = () => {
-  const firstRow = collaboratorsPageData.heroImages.slice(
-    0,
-    collaboratorsPageData.heroImages.length / 2
-  );
-  const secondRow = collaboratorsPageData.heroImages.slice(
-    collaboratorsPageData.heroImages.length / 2
-  );
-
   return (
-    <div className="bg-background text-foreground">
-      <div className="relative overflow-hidden py-16 md:py-24">
-        <div className="animated-aurora" />
-        <Container className="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-          <div className="max-w-xl">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-              {collaboratorsPageData.title}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-foreground/80">
-              {collaboratorsPageData.description}
-            </p>
+    <>
+      <div className="relative mx-4 mt-24 h-[600px] overflow-hidden rounded-3xl border shadow-2xl">
+        <div className="absolute inset-0 z-0 flex h-full w-full items-center justify-center bg-background [mask-image:linear-gradient(to_bottom,transparent_10%,black_40%,black_60%,transparent_90%)]">
+          <div className="flex h-[150%] w-[150%] -rotate-12 flex-col gap-4 opacity-50 transition-all duration-500 hover:opacity-100">
+            {Array.from({ length: 5 }).map((_, rowIndex) => (
+              <Marquee
+                key={rowIndex}
+                pauseOnHover
+                reverse={rowIndex % 2 === 1}
+                className="[--duration:40s]"
+              >
+                {/* Repeat data to ensure smooth scrolling */}
+                {[...collaboratorsData, ...collaboratorsData, ...collaboratorsData, ...collaboratorsData].map((collaborator, i) => (
+                  <div key={`${rowIndex}-${i}`} className="relative h-48 w-48 overflow-hidden rounded-xl border border-border/50 bg-muted/20 shadow-sm transition-transform hover:scale-105">
+                    <Image
+                      src={collaborator.imageUrl}
+                      alt={collaborator.name} // Use name as alt
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </Marquee>
+            ))}
           </div>
-          
-          <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden rounded-3xl">
-            <Marquee pauseOnHover vertical className="[--duration:20s]">
-              {firstRow.map((collaborator, i) => (
-                <CollaboratorImage key={`p1-${i}`} {...collaborator} />
-              ))}
-            </Marquee>
-            <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
-              {secondRow.map((collaborator, i) => (
-                <CollaboratorImage key={`p2-${i}`} {...collaborator} />
-              ))}
-            </Marquee>
+        </div>
 
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background"></div>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background"></div>
-          </div>
-        </Container>
+        {/* Overlay Content */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-gradient-to-t from-background/90 via-background/40 to-background/90 p-6 text-center backdrop-blur-[1px]">
+          <h1 className="text-5xl font-black tracking-tighter sm:text-7xl md:text-8xl">
+            {collaboratorsPageData.title}
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-foreground/80 md:text-xl">
+            {collaboratorsPageData.description}
+          </p>
+        </div>
       </div>
 
       <Container>
         <CollaboratorsList />
       </Container>
-    </div>
+    </>
   );
 };
 

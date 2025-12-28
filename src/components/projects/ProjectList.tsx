@@ -42,7 +42,7 @@ export function ProjectList() {
   }, [searchTerm]);
 
   return (
-    <section id="work" className="py-16 md:py-24">
+    <section id="work" className="py-24 md:py-24">
       <div
         ref={ref}
         className={cn(
@@ -59,7 +59,7 @@ export function ProjectList() {
           </p>
         </div>
 
-        <div className="sticky top-16 z-30 -mx-4 px-4 py-4 mb-8 bg-background/80 backdrop-blur-md transition-all">
+        <div className="sticky top-16 z-30 -mx-4 px-4 py-6 mb-8 bg-background/80 backdrop-blur-md transition-all">
           <div className="max-w-4xl mx-auto flex flex-row gap-2 items-center">
             <div className="flex-1 min-w-0 relative rounded-full border bg-card p-2 shadow-sm transition-all focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 focus-within:ring-offset-background">
               <div className="relative flex items-center">

@@ -17,7 +17,7 @@ export function Footer() {
       <Container className="py-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Saidul Ali Mallick. All rights reserved.
+            &copy; {new Date().getFullYear()} Saidulalimallick Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {profilesData.map((profile) => {

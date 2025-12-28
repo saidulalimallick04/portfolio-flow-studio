@@ -8,6 +8,8 @@ import { ThemeProvider } from '@/components/shared/ThemeProvider';
 import { PageTransition } from '@/components/shared/PageTransition';
 import { ThunderCursor } from '@/components/shared/ThunderCursor';
 import { MusicPlayer } from '@/components/shared/MusicPlayer';
+import { FloatingControls } from '@/components/shared/FloatingControls';
+import { BottomControls } from '@/components/shared/BottomControls';
 
 export const metadata: Metadata = {
   title: 'Saidul Ali Mallick | Backend Sage | Portfolio',
@@ -25,13 +27,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="font-body antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
-          disableTransitionOnChange
         >
           <ThunderCursor />
           <div className="relative z-10 bg-background/50">
@@ -42,11 +44,9 @@ export default function RootLayout({
               </PageTransition>
             </main>
             <Footer />
-            <div className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-4">
-              <BottomNav />
-              <MusicPlayer />
-            </div>
+            <BottomControls />
           </div>
+          <FloatingControls />
           <Toaster />
         </ThemeProvider>
       </body>

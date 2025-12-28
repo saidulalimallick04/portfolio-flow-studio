@@ -7,14 +7,18 @@ import { studioData } from "@/lib/placeholder-data";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
+import { Grid, Camera, Video, Palette } from "lucide-react";
 
-const categories = ["All", "Photography", "Videography", "Creative Arts"];
+const tabItems = [
+  { value: "All", label: "All", icon: Grid },
+  { value: "Photography", label: "Photography", icon: Camera },
+  { value: "Videography", label: "Videography", icon: Video },
+  { value: "Creative Arts", label: "Creative Arts", icon: Palette },
+];
 
 export function StudioGallery() {
   const [activeTab, setActiveTab] = useState("All");
-  const { ref, inView } = useScrollAnimation();
 
   const filteredItems =
     activeTab === "All"
@@ -23,23 +27,29 @@ export function StudioGallery() {
 
   return (
     <div
-      ref={ref}
       className={cn(
-        "transition-all duration-700 pt-16 md:pt-24",
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        "transition-all duration-700 pt-5",
       )}
     >
       <Tabs defaultValue="All" onValueChange={setActiveTab} className="w-full">
-        <div className="flex justify-center">
-          <TabsList className="mb-12 grid w-full max-w-lg grid-cols-4">
-            {categories.map((category) => (
-              <TabsTrigger key={category} value={category}>
-                {category}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+        {/* Sticky Tab Header */}
+        <div className="sticky top-20 z-40 mb-8 flex justify-center py-2">
+          <div className="rounded-full border bg-background/80 p-1 backdrop-blur-md shadow-sm">
+            <TabsList className="h-auto bg-transparent p-0">
+              {tabItems.map(({ value, label, icon: Icon }) => (
+                <TabsTrigger
+                  key={value}
+                  value={value}
+                  className="flex items-center gap-2 rounded-full px-4 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                >
+                  <Icon className="h-4 w-4" />
+                  <span className="hidden sm:inline">{label}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
         </div>
-        
+
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -60,12 +70,12 @@ export function StudioGallery() {
                     height={400}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                   <div className="absolute bottom-4 right-4">
-                      <span className="inline-block rounded-full bg-accent/80 px-3 py-1 text-xs font-semibold text-accent-foreground backdrop-blur-sm">
-                          {item.category}
-                      </span>
-                   </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 right-4">
+                    <span className="inline-block rounded-full bg-accent/80 px-3 py-1 text-xs font-semibold text-accent-foreground backdrop-blur-sm">
+                      {item.category}
+                    </span>
+                  </div>
                 </div>
                 <CardHeader>
                   <CardTitle className="text-xl font-bold">{item.title}</CardTitle>
