@@ -18,7 +18,15 @@ import {
   Heart,
   Users,
   ChevronDown,
-  Sparkles
+  Sparkles,
+  Settings,
+  Zap,
+  Flame,
+  Dna,
+  Power,
+  Droplets,
+  CloudFog,
+  Bug,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -26,6 +34,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useCursor } from "@/components/shared/CursorContext";
 
 const visibleLinks = [
   { href: "/", label: "Home", icon: Home },
@@ -38,7 +47,7 @@ const visibleLinks = [
 const moreLinks = [
   { href: "/hobbies", label: "Hobbies", icon: Heart },
   { href: "/studio", label: "Studio", icon: Sparkles },
-  { href: "/contact", label: "Contact", icon: Users }, // Changed icon to Users as placeholder, or reused one
+  { href: "/contact", label: "Contact", icon: Users },
 ];
 
 const allLinks = [...visibleLinks, ...moreLinks];
@@ -55,12 +64,23 @@ const directions = [
   { x: 50, y: -150 },
 ];
 
+const cursorOptions = [
+  { id: 'thunder', label: 'Thunder Breathing', icon: Zap, color: 'text-yellow-500', bg: 'bg-yellow-500/10', border: 'border-yellow-500/50', comingSoon: false },
+  { id: 'hinokami', label: 'Hinokami Kagura', icon: Flame, color: 'text-red-500', bg: 'bg-red-500/10', border: 'border-red-500/50', comingSoon: false },
+  { id: 'beast', label: 'Beast Breathing', icon: Dna, color: 'text-blue-500', bg: 'bg-blue-500/10', border: 'border-blue-500/50', comingSoon: false },
+  { id: 'water', label: 'Water Breathing', icon: Droplets, color: 'text-cyan-500', bg: 'bg-cyan-500/10', border: 'border-cyan-500/50', comingSoon: true },
+  { id: 'mist', label: 'Mist Breathing', icon: CloudFog, color: 'text-slate-400', bg: 'bg-slate-500/10', border: 'border-slate-500/50', comingSoon: true },
+  { id: 'insect', label: 'Insect Breathing', icon: Bug, color: 'text-purple-500', bg: 'bg-purple-500/10', border: 'border-purple-500/50', comingSoon: true },
+];
+
 export function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const { scrollYProgress } = useScroll();
+  const { cursorType, setCursorType } = useCursor();
 
   useEffect(() => {
     if (!headerRef.current) return;
@@ -80,13 +100,7 @@ export function Header() {
   }, []);
 
   // Lock body scroll when menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [isOpen]);
+
 
   const w = dimensions.width;
   const h = dimensions.height;
@@ -182,12 +196,28 @@ export function Header() {
             </nav>
             <ThemeToggle />
 
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative z-50"
+              onClick={() => {
+                if (!isSettingsOpen) setIsOpen(false);
+                setIsSettingsOpen(!isSettingsOpen);
+              }}
+            >
+              {isSettingsOpen ? <X className="h-5 w-5" /> : <Settings className="h-5 w-5" />}
+              <span className="sr-only">Cursor Settings</span>
+            </Button>
+
             {/* Mobile Menu Toggle Button */}
             <div className="min-[864px]:hidden">
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => {
+                  if (!isOpen) setIsSettingsOpen(false);
+                  setIsOpen(!isOpen);
+                }}
                 className="relative z-50" // Ensure button is above overlay
               >
                 {isOpen ? (
@@ -252,6 +282,107 @@ export function Header() {
                     </Link>
                   </motion.div>
                 ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Full Screen Settings Overlay (Breathing Style Selector) */}
+      <AnimatePresence>
+        {isSettingsOpen && (
+          <motion.div
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(12px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-background/80"
+            onClick={() => setIsSettingsOpen(false)}
+          >
+            <div className="flex h-full flex-col justify-center px-6 pt-24 pb-12">
+              <div className="max-w-lg mx-auto w-full">
+                <h2 className="text-xl font-bold text-center mb-6 text-foreground/80">Select Breathing Style</h2>
+
+                <div className="grid grid-cols-3 gap-3 mb-8">
+                  {cursorOptions.map((option, index) => (
+                    <motion.div
+                      key={option.id}
+                      initial={{
+                        opacity: 0,
+                        scale: 0.5,
+                        x: directions[index]?.x || (Math.random() * 200 - 100),
+                        y: directions[index]?.y || (Math.random() * 200 - 100)
+                      }}
+                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.5 }}
+                      transition={{
+                        type: "spring",
+                        damping: 15,
+                        stiffness: 150,
+                        delay: 0.1 + (index * 0.1),
+                      }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <button
+                        onClick={() => {
+                          if (!option.comingSoon) {
+                            setCursorType(option.id as any);
+                            setIsSettingsOpen(false);
+                          }
+                        }}
+                        disabled={option.comingSoon}
+                        className={cn(
+                          "relative flex flex-col items-center justify-center gap-2 w-full aspect-square rounded-xl border bg-card/50 p-2 text-center shadow-sm transition-all",
+                          !option.comingSoon && "hover:scale-105 active:scale-95 hover:bg-accent/5",
+                          cursorType === option.id && !option.comingSoon ? `${option.border} ${option.bg}` : "",
+                          option.comingSoon && "opacity-50 cursor-not-allowed border-dashed bg-muted/20"
+                        )}
+                      >
+                        <option.icon className={cn("h-5 w-5 md:h-8 md:w-8", option.color)} />
+                        <span className={cn(
+                          "text-[10px] md:text-xs font-semibold",
+                          cursorType === option.id ? "text-foreground" : "text-muted-foreground"
+                        )}>
+                          {option.label}
+                        </span>
+                        {option.comingSoon && (
+                          <span className="absolute inset-0 flex items-center justify-center rounded-xl bg-background/50 backdrop-blur-[1px]">
+                            <span className="bg-primary/20 text-primary text-[9px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wide border border-primary/20">
+                              Soon
+                            </span>
+                          </span>
+                        )}
+                      </button>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Turn Off Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 50 }}
+                  transition={{ delay: 0.4 }}
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex justify-center"
+                >
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={() => {
+                      setCursorType('none');
+                      setIsSettingsOpen(false);
+                    }}
+                    className={cn(
+                      "rounded-xl px-12 py-6 border-2 hover:bg-destructive/10 hover:text-destructive hover:border-destructive/50 transition-all gap-2",
+                      cursorType === 'none' ? "bg-secondary text-secondary-foreground" : ""
+                    )}
+                  >
+                    <Power className="h-5 w-5" />
+                    Turn Off Breathing
+                  </Button>
+                </motion.div>
+
               </div>
             </div>
           </motion.div>

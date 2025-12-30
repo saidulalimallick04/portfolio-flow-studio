@@ -1,9 +1,13 @@
 
-"use client";
-
 import { Container } from "@/components/shared/Container";
 import { journeyPageData } from "@/lib/placeholder-data";
 import { JourneyTimeline } from "@/components/journey/JourneyTimeline";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "My Journey | PortfolioFlow",
+  description: "Tracing my professional path, from education to career milestones.",
+};
 
 export default function JourneyPage() {
 

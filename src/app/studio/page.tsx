@@ -1,12 +1,13 @@
 
-"use client";
-
-import { useState, useEffect } from "react";
 import { StudioHero } from "@/components/studio/StudioHero";
 import { Container } from "@/components/shared/Container";
 import { StudioGallery } from "@/components/studio/StudioGallery";
-import heroImages from "@/lib/placeholder-images.json";
-import type { HeroImage } from "@/lib/types";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Creative Studio | PortfolioFlow",
+  description: "A showcase of my creative works, media, and design experiments.",
+};
 
 export default function StudioPage() {
   return (

@@ -87,7 +87,7 @@ export function FloatingControls() {
             <TooltipProvider>
                 {/* Bottom Left Contact Button */}
                 <div className="fixed bottom-8 left-8 z-50">
-                    <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
+                    <Dialog open={isContactOpen} onOpenChange={setIsContactOpen} modal={false}>
                         <Tooltip>
                             <TooltipTrigger asChild>
                                 <DialogTrigger asChild>
