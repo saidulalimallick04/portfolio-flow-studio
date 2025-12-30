@@ -32,6 +32,8 @@ const CollaboratorsPage = () => {
                       alt={collaborator.name} // Use name as alt
                       fill
                       className="object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 ))}

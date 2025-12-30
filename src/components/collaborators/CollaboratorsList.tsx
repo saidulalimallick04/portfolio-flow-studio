@@ -38,6 +38,8 @@ export function CollaboratorsList() {
                 data-ai-hint={collaborator.imageHint}
                 fill
                 className="object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <h3 className="mt-6 text-xl font-semibold leading-7 tracking-tight text-foreground">{collaborator.name}</h3>

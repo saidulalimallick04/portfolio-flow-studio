@@ -41,6 +41,8 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                         width={600}
                         height={400}
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-4 right-4">
