@@ -28,7 +28,7 @@ const CollaboratorsPage = () => {
                 {[...collaboratorsData, ...collaboratorsData, ...collaboratorsData, ...collaboratorsData].map((collaborator, i) => (
                   <div key={`${rowIndex}-${i}`} className="relative h-48 w-48 overflow-hidden rounded-xl border border-border/50 bg-muted/20 shadow-sm transition-transform hover:scale-105">
                     <Image
-                      src={collaborator.imageUrl}
+                      src={collaborator.imageUrl || ""}
                       alt={collaborator.name} // Use name as alt
                       fill
                       className="object-cover"
