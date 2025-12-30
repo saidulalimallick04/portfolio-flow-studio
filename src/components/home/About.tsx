@@ -23,17 +23,24 @@ export function About() {
           {homePageData.about.sectionTitle}
         </h2>
         <div className="mt-6 space-y-6 text-lg leading-8 text-foreground/80">
-            {homePageData.about.paragraphs.map((p, index) => (
-                <p key={index}>{p}</p>
-            ))}
+          {homePageData.about.paragraphs.map((p, index) => (
+            <p key={index}>{p}</p>
+          ))}
         </div>
-        <div className="mt-10">
-            <Button asChild size="lg">
-                <Link href="mailto:saidulmallick753@gmail.com">
-                    Hire Me
-                    <Send className="ml-2 h-4 w-4" />
-                </Link>
-            </Button>
+        <div className="mt-10 flex justify-center gap-4">
+          <Button asChild size="lg">
+            <Link href="mailto:saidulmallick753@gmail.com">
+              Hire Me
+              <Send className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() => window.dispatchEvent(new Event("open-contact"))}
+          >
+            Contact Me
+          </Button>
         </div>
       </div>
     </section>

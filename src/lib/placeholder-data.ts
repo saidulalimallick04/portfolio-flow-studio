@@ -61,6 +61,12 @@ export const profilesData: Profile[] = [
     url: "https://instagram.com/saidulalimallick04",
     icon: "instagram",
   },
+  {
+    id: 6,
+    name: "Email",
+    url: "mailto:saidulalimallick@gmail.com",
+    icon: "email",
+  },
 ];
 
 export const projectsSectionData = {

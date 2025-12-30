@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { useState, useMemo } from "react";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { Input } from "@/components/ui/input";
@@ -6,8 +8,6 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 import { Search, LayoutGrid, List, Calendar, ArrowUpRight } from "lucide-react";
 import { projectsData, projectsSectionData } from "@/lib/placeholder-data";
-import Image from "next/image";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -59,7 +59,7 @@ export function ProjectList() {
           </p>
         </div>
 
-        <div className="sticky top-16 z-30 -mx-4 px-4 py-6 mb-8 bg-background/80 backdrop-blur-md transition-all">
+        <div className="sticky top-16 z-30 -mx-4 px-4 py-6 mb-8 transition-all">
           <div className="max-w-4xl mx-auto flex flex-row gap-2 items-center">
             <div className="flex-1 min-w-0 relative rounded-full border bg-card p-2 shadow-sm transition-all focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 focus-within:ring-offset-background">
               <div className="relative flex items-center">
@@ -129,7 +129,7 @@ export function ProjectList() {
                     <div className="flex items-start justify-between">
                       <div>
                         <div className="flex items-center gap-2 mb-2">
-                          <span className="inline-block rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent-foreground border border-accent/20">
+                          <span className="inline-block rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent border border-accent/20">
                             {project.category}
                           </span>
                           <span className={cn(

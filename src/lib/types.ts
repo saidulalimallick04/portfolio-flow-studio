@@ -42,7 +42,7 @@ export type Profile = {
   id: number;
   name: string;
   url: string;
-  icon: "github" | "linkedin" | "twitter" | "facebook" | "instagram";
+  icon: "github" | "linkedin" | "twitter" | "facebook" | "instagram" | "email";
 };
 
 export type Skill = {

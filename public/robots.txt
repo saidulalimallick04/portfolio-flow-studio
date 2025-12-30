@@ -1,0 +1,16 @@
+# Robots.txt for Portfolio Flow Studio
+# Generated based on project structure
+
+User-agent: *
+Allow: /
+
+# Disallow Next.js internal build files to save crawl budget
+Disallow: /_next/
+
+# Disallow any future private or admin routes
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap locations
+Sitemap: https://saidulalimallick.studio/sitemap.xml
+Sitemap: https://saidulalimallick.netlify.app/sitemap.xml

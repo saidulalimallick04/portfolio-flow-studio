@@ -10,17 +10,24 @@ import { Container } from "../shared/Container";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 import type { HeroImage } from "@/lib/types";
+import { AnimatedText } from "./AnimatedText";
 
 export function Hero() {
   const [heroBg, setHeroBg] = useState<HeroImage | null>(null);
   const [profilePic, setProfilePic] = useState<HeroImage | null>(null);
+  const [showAurora, setShowAurora] = useState(false);
 
   useEffect(() => {
+    // Select random hero background and profile picture
     const heroBackgrounds = heroImages.home.backgrounds as HeroImage[];
     const profilePictures = heroImages.home.profilePictures as HeroImage[];
 
     setHeroBg(heroBackgrounds[Math.floor(Math.random() * heroBackgrounds.length)]);
     setProfilePic(profilePictures[Math.floor(Math.random() * profilePictures.length)]);
+
+    // Defer aurora animation to improve initial load
+    const timer = setTimeout(() => setShowAurora(true), 500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -36,19 +43,21 @@ export function Hero() {
             priority
           />
           <div className="absolute inset-0 bg-background/80" />
-          <div className="animated-aurora absolute inset-0" />
+          {showAurora && <div className="animated-aurora absolute inset-0" />}
         </>
       )}
       <Container className="relative z-10 py-10 lg:py-14">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           {/* Text Content */}
           <div className="max-w-xl text-center md:text-left">
+
             <p className="text-lg font-medium uppercase tracking-widest text-accent">
               {homePageData.about.title}
             </p>
-            <h1 className="glow-name mt-4 font-black">
-              {homePageData.about.name}
-            </h1>
+            <AnimatedText
+              text={homePageData.about.name}
+              className="glow-name mt-4 font-black justify-center md:justify-start"
+            />
             <p className="mt-6 text-lg text-foreground/80">
               {homePageData.about.bio}
             </p>

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowUp, Code, Send } from "lucide-react";
+import { ArrowUp, Code, Send, X, RotateCcw } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     Dialog,
@@ -46,13 +46,20 @@ export function FloatingControls() {
                 const parsed = JSON.parse(savedDraft);
                 setFormData(parsed);
                 setHasDraft(Object.values(parsed).some((val) => val));
-            } catch (e) {
-                console.error("Failed to parse draft", e);
+            } catch {
+                // Failed to parse draft - ignore and continue
             }
         }
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Listen for custom event to open contact form
+    useEffect(() => {
+        const handleOpenContact = () => setIsContactOpen(true);
+        window.addEventListener("open-contact", handleOpenContact);
+        return () => window.removeEventListener("open-contact", handleOpenContact);
     }, []);
 
     const handleChange = (
@@ -85,6 +92,13 @@ export function FloatingControls() {
         localStorage.removeItem("contactDraft");
     };
 
+    const handleReset = () => {
+        setFormData({ name: "", email: "", message: "" });
+        setHasDraft(false);
+        localStorage.removeItem("contactDraft");
+        toast({ title: "Draft Cleared", description: "Form has been reset." });
+    };
+
     return (
         <div className="hidden md:block">
             <TooltipProvider>
@@ -111,7 +125,7 @@ export function FloatingControls() {
                                 <p>{hasDraft ? "Resume Draft" : "Contact Me"}</p>
                             </TooltipContent>
                         </Tooltip>
-                        <DialogContent className="fixed !left-8 !bottom-24 !top-auto !right-auto !translate-x-0 !translate-y-0 origin-bottom-left sm:max-w-[425px] data-[state=open]:slide-in-from-bottom-10 data-[state=open]:slide-in-from-left-0 data-[state=closed]:slide-out-to-bottom-10 data-[state=closed]:slide-out-to-left-0">
+                        <DialogContent className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-md origin-center md:!left-8 md:!bottom-24 md:!top-auto md:!right-auto md:!translate-x-0 md:!translate-y-0 md:origin-bottom-left rounded-2xl border-primary/20 bg-background/95 backdrop-blur-xl shadow-2xl data-[state=open]:slide-in-from-bottom-10 data-[state=open]:slide-in-from-left-0 data-[state=closed]:slide-out-to-bottom-10 data-[state=closed]:slide-out-to-left-0 md:w-auto">
                             <DialogHeader>
                                 <DialogTitle>Contact Me</DialogTitle>
                                 <DialogDescription>
@@ -150,7 +164,17 @@ export function FloatingControls() {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <div className="flex justify-end">
+                                <div className="flex items-center justify-between mt-2">
+                                    <Button
+                                        type="button"
+                                        variant="ghost"
+                                        size="sm"
+                                        onClick={handleReset}
+                                        className="text-muted-foreground hover:text-destructive gap-2"
+                                    >
+                                        <RotateCcw className="h-3.5 w-3.5" />
+                                        Reset
+                                    </Button>
                                     <Button type="submit" className="gap-2">
                                         Send Message <Send className="h-4 w-4" />
                                     </Button>

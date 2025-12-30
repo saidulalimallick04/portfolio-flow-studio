@@ -3,13 +3,11 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/shared/Header';
 import { Footer } from '@/components/shared/Footer';
-import { BottomNav } from '@/components/shared/BottomNav';
 import { ThemeProvider } from '@/components/shared/ThemeProvider';
 import { PageTransition } from '@/components/shared/PageTransition';
 import { ThunderCursor } from '@/components/shared/ThunderCursor';
-import { MusicPlayer } from '@/components/shared/MusicPlayer';
-import { FloatingControls } from '@/components/shared/FloatingControls';
 import { BottomControls } from '@/components/shared/BottomControls';
+import { FloatingControls } from '@/components/shared/FloatingControls';
 
 export const metadata: Metadata = {
   title: 'Saidul Ali Mallick | Backend Sage | Portfolio',
@@ -24,9 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="font-body antialiased">
