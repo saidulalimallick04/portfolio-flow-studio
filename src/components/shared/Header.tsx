@@ -17,18 +17,31 @@ import {
   Milestone,
   Heart,
   Users,
+  ChevronDown,
   Sparkles
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const navLinks = [
+const visibleLinks = [
   { href: "/", label: "Home", icon: Home },
   { href: "/projects", label: "Projects", icon: Briefcase },
   { href: "/skills", label: "Skills", icon: Lightbulb },
   { href: "/journey", label: "My Journey", icon: Milestone },
-  { href: "/hobbies", label: "Hobbies", icon: Heart },
   { href: "/collaborators", label: "Collaborators", icon: Users },
-  { href: "/studio", label: "Studio", icon: Sparkles },
 ];
+
+const moreLinks = [
+  { href: "/hobbies", label: "Hobbies", icon: Heart },
+  { href: "/studio", label: "Studio", icon: Sparkles },
+  { href: "/contact", label: "Contact", icon: Users }, // Changed icon to Users as placeholder, or reused one
+];
+
+const allLinks = [...visibleLinks, ...moreLinks];
 
 // Deterministic random start positions (x, y) relative to final position
 const directions = [
@@ -39,6 +52,7 @@ const directions = [
   { x: 0, y: 200 },     // Bottom
   { x: 200, y: 0 },     // Right
   { x: -50, y: 150 },   // Bottom-Left
+  { x: 50, y: -150 },
 ];
 
 export function Header() {
@@ -124,7 +138,7 @@ export function Header() {
           </Link>
           <div className="flex items-center gap-4">
             <nav className="hidden items-center gap-6 min-[864px]:flex">
-              {navLinks.map((link) => (
+              {visibleLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -136,6 +150,35 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={cn(
+                      "flex items-center gap-1 text-sm font-medium transition-colors hover:text-accent whitespace-nowrap focus:outline-none",
+                      moreLinks.some(link => pathname === link.href) ? "text-accent" : "text-foreground/70"
+                    )}
+                  >
+                    More <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  {moreLinks.map((link) => (
+                    <DropdownMenuItem key={link.href} asChild>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "flex items-center gap-2 cursor-pointer",
+                          pathname === link.href ? "text-accent" : ""
+                        )}
+                      >
+                        <link.icon className="h-4 w-4" />
+                        {link.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </nav>
             <ThemeToggle />
 
@@ -172,7 +215,7 @@ export function Header() {
           >
             <div className="flex h-full flex-col justify-center px-6 pt-24 pb-12">
               <div className="grid grid-cols-6 gap-4 max-w-lg mx-auto w-full">
-                {navLinks.map((link, index) => (
+                {allLinks.map((link, index) => (
                   <motion.div
                     key={link.href}
                     initial={{
@@ -191,9 +234,9 @@ export function Header() {
                     }}
                     onClick={(e) => e.stopPropagation()}
                     className={cn(
-                      // First 4 items (index 0-3) span 3 cols (2 per row)
-                      // Last 3 items (index 4-6) span 2 cols (3 per row)
-                      index < 4 ? "col-span-3" : "col-span-2"
+                      // First 2 items (index 0-1) span 3 cols (2 per row)
+                      // Remaining 6 items (index 2-7) span 2 cols (3 per row)
+                      index < 2 ? "col-span-3" : "col-span-2"
                     )}
                   >
                     <Link

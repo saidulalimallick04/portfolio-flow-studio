@@ -22,13 +22,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import Link from "next/link";
+import { ContactForm } from "@/components/shared/ContactForm";
 
 export function FloatingControls() {
     const [showScrollTop, setShowScrollTop] = useState(false);
     const [isContactOpen, setIsContactOpen] = useState(false);
-    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [hasDraft, setHasDraft] = useState(false);
-    const { toast } = useToast();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,19 +40,32 @@ export function FloatingControls() {
             }
         };
 
-        const savedDraft = localStorage.getItem("contactDraft");
-        if (savedDraft) {
-            try {
-                const parsed = JSON.parse(savedDraft);
-                setFormData(parsed);
-                setHasDraft(Object.values(parsed).some((val) => val));
-            } catch {
-                // Failed to parse draft - ignore and continue
+        // Check for draft in localStorage to show indicator
+        const checkDraft = () => {
+            const savedDraft = localStorage.getItem("contactDraft");
+            if (savedDraft) {
+                try {
+                    const parsed = JSON.parse(savedDraft);
+                    setHasDraft(Object.values(parsed).some((val) => val));
+                } catch {
+                    setHasDraft(false);
+                }
+            } else {
+                setHasDraft(false);
             }
-        }
+        };
+
+        checkDraft();
+        // Listen for storage events to update draft indicator across tabs/components
+        window.addEventListener("storage", checkDraft);
+        const interval = setInterval(checkDraft, 1000); // Polling as a fallback for same-tab updates
 
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("storage", checkDraft);
+            clearInterval(interval);
+        };
     }, []);
 
     // Listen for custom event to open contact form
@@ -62,41 +75,11 @@ export function FloatingControls() {
         return () => window.removeEventListener("open-contact", handleOpenContact);
     }, []);
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        const { id, value } = e.target;
-        const newData = { ...formData, [id]: value };
-        setFormData(newData);
-        localStorage.setItem("contactDraft", JSON.stringify(newData));
-        setHasDraft(Object.values(newData).some((val) => val));
-    };
-
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
-    };
-
-    const handleContactSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsContactOpen(false);
-        toast({
-            title: "Message Sent!",
-            description: "Thanks for reaching out. I'll get back to you soon.",
-        });
-        // Clear draft
-        setFormData({ name: "", email: "", message: "" });
-        setHasDraft(false);
-        localStorage.removeItem("contactDraft");
-    };
-
-    const handleReset = () => {
-        setFormData({ name: "", email: "", message: "" });
-        setHasDraft(false);
-        localStorage.removeItem("contactDraft");
-        toast({ title: "Draft Cleared", description: "Form has been reset." });
     };
 
     return (
@@ -132,54 +115,21 @@ export function FloatingControls() {
                                     Send me a message and I'll get back to you as soon as possible.
                                 </DialogDescription>
                             </DialogHeader>
-                            <form onSubmit={handleContactSubmit} className="grid gap-4 py-4">
-                                <div className="grid gap-2">
-                                    <Label htmlFor="name">Name</Label>
-                                    <Input
-                                        id="name"
-                                        placeholder="Your Name"
-                                        required
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Label htmlFor="email">Email</Label>
-                                    <Input
-                                        id="email"
-                                        type="email"
-                                        placeholder="your@email.com"
-                                        required
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Label htmlFor="message">Message</Label>
-                                    <Textarea
-                                        id="message"
-                                        placeholder="Type your message here..."
-                                        required
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className="flex items-center justify-between mt-2">
-                                    <Button
-                                        type="button"
-                                        variant="ghost"
-                                        size="sm"
-                                        onClick={handleReset}
-                                        className="text-muted-foreground hover:text-destructive gap-2"
+
+                            <ContactForm onSuccess={() => setIsContactOpen(false)} />
+
+                            <div className="mt-2 text-center text-xs text-muted-foreground border-t pt-4">
+                                <p>
+                                    Having trouble?{" "}
+                                    <Link
+                                        href="/contact"
+                                        onClick={() => setIsContactOpen(false)}
+                                        className="text-primary hover:underline font-medium"
                                     >
-                                        <RotateCcw className="h-3.5 w-3.5" />
-                                        Reset
-                                    </Button>
-                                    <Button type="submit" className="gap-2">
-                                        Send Message <Send className="h-4 w-4" />
-                                    </Button>
-                                </div>
-                            </form>
+                                        Open full contact page
+                                    </Link>
+                                </p>
+                            </div>
                         </DialogContent>
                     </Dialog>
                 </div>

@@ -6,11 +6,16 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
-import { profilesData, profilesPageData } from "@/lib/placeholder-data";
+import { profilesData } from "@/lib/placeholder-data";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+
+const profilesPageData = {
+  title: "Find Me Online",
+  description: "Connect with me on these platforms.",
+};
 
 const iconMap = {
   github: Github,

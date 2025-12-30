@@ -34,8 +34,12 @@ export type Collaborator = {
   name: string;
   title: string;
   summary: string;
-  imageUrl: string;
+  imageUrl?: string;
   imageHint: string;
+  twitter?: string;
+  linkedin?: string;
+  github?: string;
+  collaboration_count?: number;
 };
 
 export type Profile = {

@@ -9,7 +9,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { projectsData, projectsSectionData } from "@/lib/placeholder-data";
+import { projectsData } from "@/lib/placeholder-data";
+
+const projectsSectionData = {
+  title: "Projects",
+  description: "A selection of projects that I'm proud of."
+};
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";

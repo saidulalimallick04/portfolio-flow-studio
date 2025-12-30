@@ -24,12 +24,9 @@ export const homePageData = {
   },
 };
 
-// Profiles Data
-export const profilesPageData = {
-  title: "Find Me Online",
-  description: "Connect with me on these platforms.",
-};
 
+
+// Profiles Data
 export const profilesData: Profile[] = [
   {
     id: 1,
@@ -69,10 +66,6 @@ export const profilesData: Profile[] = [
   },
 ];
 
-export const projectsSectionData = {
-  title: "Projects",
-  description: "A selection of projects that I'm proud of."
-};
 
 export const projectsData: Project[] = [
   {
@@ -206,7 +199,11 @@ export const collaboratorsData: Collaborator[] = [
     title: "Project Manager",
     summary: "Dedicated to ensuring customer satisfaction and success, with a proactive approach to client support and retention.",
     imageUrl: "https://github.com/supriyakhanra.png",
-    imageHint: "professional person"
+    imageHint: "professional person",
+    twitter: "https://twitter.com/supriyakhanra",
+    linkedin: "https://linkedin.com/in/supriyakhanra",
+    github: "https://github.com/supriyakhanra",
+    collaboration_count: 15
   },
   {
     id: 2,
@@ -214,7 +211,11 @@ export const collaboratorsData: Collaborator[] = [
     title: "Software Engineer",
     summary: "Operations specialist with a background in scaling startups, ensuring smooth and efficient company operations.",
     imageUrl: "https://github.com/Anshu370.png",
-    imageHint: "creative office"
+    imageHint: "creative office",
+    twitter: "https://twitter.com/anshugupta",
+    linkedin: "https://linkedin.com/in/anshugupta",
+    github: "https://github.com/Anshu370",
+    collaboration_count: 8
   },
   {
     id: 3,
@@ -222,7 +223,11 @@ export const collaboratorsData: Collaborator[] = [
     title: "Software Engineer",
     summary: "Passionate product manager focused on delivering user-centric solutions that meet market needs.",
     imageUrl: "https://github.com/prangit95.png",
-    imageHint: "thoughtful person"
+    imageHint: "thoughtful person",
+    twitter: "https://twitter.com/pranjaldebnath",
+    linkedin: "https://linkedin.com/in/pranjaldebnath",
+    github: "https://github.com/prangit95",
+    collaboration_count: 12
   },
   {
     id: 4,
@@ -230,7 +235,11 @@ export const collaboratorsData: Collaborator[] = [
     title: "Software Engineer",
     summary: "Technical guru with a passion for developing scalable and secure cloud-based applications.",
     imageUrl: "https://github.com/WanderSusie.png",
-    imageHint: "professional person"
+    imageHint: "professional person",
+    twitter: "https://twitter.com/snehadas",
+    linkedin: "https://linkedin.com/in/snehadas",
+    github: "https://github.com/WanderSusie",
+    collaboration_count: 5
   },
 ];
 

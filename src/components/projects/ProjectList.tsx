@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 import { Search, LayoutGrid, List, Calendar, ArrowUpRight } from "lucide-react";
-import { projectsData, projectsSectionData } from "@/lib/placeholder-data";
+import { projectsData } from "@/lib/placeholder-data";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -18,6 +18,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+export const projectsSectionData = {
+  title: "Projects",
+  description: "A selection of projects that I'm proud of."
+};
 
 export function ProjectList() {
   const [searchTerm, setSearchTerm] = useState("");
