@@ -73,4 +73,6 @@ export type StudioItem = {
   category: "Photography" | "Videography" | "Creative Arts";
   imageUrl: string;
   imageHint: string;
+  youtubeUrl?: string;
+  alternativeUrl?: string;
 };

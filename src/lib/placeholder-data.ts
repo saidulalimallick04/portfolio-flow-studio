@@ -532,7 +532,9 @@ export const studioData: StudioItem[] = [
     description: "A short documentary-style video showing the creative process behind a recent project.",
     category: "Videography",
     imageUrl: "https://picsum.photos/seed/1008/600/400",
-    imageHint: "film making"
+    imageHint: "film making",
+    youtubeUrl: "https://youtube.com",
+    alternativeUrl: "https://vimeo.com"
   },
   {
     id: 9,
@@ -540,6 +542,7 @@ export const studioData: StudioItem[] = [
     description: "A surreal digital artwork blending elements of nature and technology.",
     category: "Creative Arts",
     imageUrl: "https://picsum.photos/seed/1009/600/400",
-    imageHint: "surreal landscape"
+    imageHint: "surreal landscape",
+    alternativeUrl: "https://behance.net"
   },
 ];
