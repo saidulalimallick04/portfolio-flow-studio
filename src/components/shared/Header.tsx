@@ -165,7 +165,7 @@ export function Header() {
                 </Link>
               ))}
 
-              <DropdownMenu>
+              <DropdownMenu modal={false}>
                 <DropdownMenuTrigger asChild>
                   <button
                     className={cn(

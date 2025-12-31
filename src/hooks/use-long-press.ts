@@ -18,6 +18,7 @@ export function useLongPress(
             }
             timeout.current = setTimeout(() => {
                 onLongPress();
+                timeout.current = undefined;
             }, delay);
         },
         [onLongPress, delay, shouldPreventDefault]
