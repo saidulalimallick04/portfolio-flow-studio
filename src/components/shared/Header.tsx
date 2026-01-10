@@ -68,7 +68,7 @@ const cursorOptions = [
   { id: 'thunder', label: 'Thunder Breathing', icon: Zap, color: 'text-yellow-500', bg: 'bg-yellow-500/10', border: 'border-yellow-500/50', comingSoon: false },
   { id: 'hinokami', label: 'Hinokami Kagura', icon: Flame, color: 'text-red-500', bg: 'bg-red-500/10', border: 'border-red-500/50', comingSoon: false },
   { id: 'beast', label: 'Beast Breathing', icon: Dna, color: 'text-blue-500', bg: 'bg-blue-500/10', border: 'border-blue-500/50', comingSoon: false },
-  { id: 'water', label: 'Water Breathing', icon: Droplets, color: 'text-cyan-500', bg: 'bg-cyan-500/10', border: 'border-cyan-500/50', comingSoon: true },
+  { id: 'water', label: 'Water Breathing', icon: Droplets, color: 'text-cyan-500', bg: 'bg-cyan-500/10', border: 'border-cyan-500/50', comingSoon: false },
   { id: 'mist', label: 'Mist Breathing', icon: CloudFog, color: 'text-slate-400', bg: 'bg-slate-500/10', border: 'border-slate-500/50', comingSoon: true },
   { id: 'insect', label: 'Insect Breathing', icon: Bug, color: 'text-purple-500', bg: 'bg-purple-500/10', border: 'border-purple-500/50', comingSoon: true },
 ];

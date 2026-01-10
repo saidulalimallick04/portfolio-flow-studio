@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type CursorType = "thunder" | "hinokami" | "beast" | "none";
+export type CursorType = "thunder" | "hinokami" | "beast" | "water" | "none";
 
 interface CursorContextType {
     cursorType: CursorType;
