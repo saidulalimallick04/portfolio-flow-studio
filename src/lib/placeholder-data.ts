@@ -10,16 +10,19 @@ import type {
 } from "@/lib/types";
 import { Award, Briefcase, GraduationCap, Trophy, Cpu } from "lucide-react";
 
+// ================================================================================================ //
 // Home Page Data
+// ================================================================================================ //
+
 export const homePageData = {
   about: {
     sectionTitle: "About Me",
     name: "Saidul Ali Mallick",
-    title: "Backend Sage | Backend Developer",
-    bio: "I build powerful systems behind the scenes—simple, secure, and scalable. Rooted in code, driven by curiosity, and inspired by nature.",
+    title: "Backend Developer | AI/ML Engineer | Data Science Enthusiast",
+    bio: "Building the backbone of modern web applications with Python & Django, while powering the future with Artificial Intelligence and Deep Learning. I design systems that are not just functional, but intelligent, scalable, and secure.",
     paragraphs: [
-      "I build powerful systems behind the scenes—simple, secure, and scalable. Rooted in code, driven by curiosity, and inspired by nature.",
-      "Specialized in Python, Django, and Machine Learning, I aim to solve complex problems and deliver innovative, efficient, and data-driven solutions.",
+      "I am Saidul Ali Mallick (Sami), a dedicated Backend Developer and AI/ML Engineer with a strong passion for building scalable, secure, and efficient digital systems. Currently pursuing a B.Tech in Computer Science with a specialization in Artificial Intelligence and Machine Learning, I bridge the gap between complex algorithms and real-world applications. My technical arsenal is rooted in Python and Django, allowing me to architect robust backend infrastructures and RESTful APIs that power dynamic web applications.",
+      "Beyond traditional web development, I am deeply immersed in the world of Data Science and Deep Learning. I leverage modern tools like TensorFlow, Streamlit, and Pandas to create intelligent solutions—from image classifiers to predictive analytics models. Whether it's optimizing database queries with PostgreSQL, designing seamless user experiences with React and Next.js, or automating data pipelines, I am driven by curiosity and a commitment to innovation. My goal is to craft software that not only solves problems but also delivers a premium, high-performance user experience.",
     ],
   },
 };
@@ -70,6 +73,10 @@ export const profilesData: Profile[] = [
   },
 ];
 
+
+// ================================================================================================ //
+// Projects Data
+// ================================================================================================ //
 
 export const projectsData: Project[] = [
   // Full Stack Projects
@@ -344,17 +351,14 @@ export const projectsData: Project[] = [
   },
 ];
 
+
+// ================================================================================================ //
 // Collaborators Page Data
+// ================================================================================================ //
+
 export const collaboratorsPageData = {
   title: "I Have Worked With ...",
   description: "A diverse team of passionate professionals with unique skills driving innovation and excellence in every project.",
-  heroImages: [
-    { imageUrl: "https://picsum.photos/seed/602/400/400", imageHint: "professional-person" },
-    { imageUrl: "https://picsum.photos/seed/603/400/400", imageHint: "creative-office" },
-    { imageUrl: "https://picsum.photos/seed/604/400/400", imageHint: "thoughtful-person" },
-    { imageUrl: "https://picsum.photos/seed/602/400/400", imageHint: "professional-person" },
-    { imageUrl: "https://picsum.photos/seed/603/400/400", imageHint: "creative-office" },
-  ] as HeroImage[],
   team: {
     title: "Worked or Collaborated With ...",
     description: "A diverse group of passionate professionals, each bringing unique skills and experiences to drive innovation and excellence in every project we undertake."
@@ -364,55 +368,75 @@ export const collaboratorsPageData = {
 export const collaboratorsData: Collaborator[] = [
   {
     id: 1,
+
     name: "Supriya Khanra",
     title: "Project Manager",
     summary: "Dedicated to ensuring customer satisfaction and success, with a proactive approach to client support and retention.",
+
     imageUrl: "https://github.com/supriyakhanra.png",
     imageHint: "professional-person",
+
     twitter: "https://twitter.com/supriyakhanra",
     linkedin: "https://linkedin.com/in/supriyakhanra",
     github: "https://github.com/supriyakhanra",
+
     collaboration_count: 15
   },
   {
     id: 2,
+
     name: "Anshu Gupta",
     title: "Software Engineer",
     summary: "Operations specialist with a background in scaling startups, ensuring smooth and efficient company operations.",
+
     imageUrl: "https://github.com/Anshu370.png",
     imageHint: "creative-office",
+
     twitter: "https://twitter.com/anshugupta",
     linkedin: "https://linkedin.com/in/anshugupta",
     github: "https://github.com/Anshu370",
+
     collaboration_count: 8
   },
   {
     id: 3,
+
     name: "Pranjal Debnath",
     title: "Software Engineer",
     summary: "Passionate product manager focused on delivering user-centric solutions that meet market needs.",
+
     imageUrl: "https://github.com/prangit95.png",
     imageHint: "thoughtful-person",
+
     twitter: "https://twitter.com/pranjaldebnath",
     linkedin: "https://linkedin.com/in/pranjaldebnath",
     github: "https://github.com/prangit95",
+
     collaboration_count: 12
   },
   {
     id: 4,
+
     name: "Sneha Das",
     title: "Software Engineer",
     summary: "Technical guru with a passion for developing scalable and secure cloud-based applications.",
+
     imageUrl: "https://github.com/WanderSusie.png",
     imageHint: "professional-person",
+
     twitter: "https://twitter.com/snehadas",
     linkedin: "https://linkedin.com/in/snehadas",
     github: "https://github.com/WanderSusie",
+
     collaboration_count: 5
   },
 ];
 
+
+// ================================================================================================ //
 // Hobbies Page Data
+// ================================================================================================ //
+
 export const hobbiesPageData = {
   title: "My Hobbies",
   description: "When I'm not coding, I enjoy a variety of activities that keep me creative and balanced.",
@@ -446,7 +470,11 @@ export const hobbiesData: Hobby[] = [
   },
 ];
 
+
+// ================================================================================================ //
 // Journey Page Data
+// ================================================================================================ //
+
 export const journeyPageData = {
   title: "My Professional Journey",
   description: "A timeline of my career, highlighting key roles, projects, and learning experiences that have shaped my skills and expertise.",
@@ -507,7 +535,11 @@ export const journeyData: Journey[] = [
   },
 ];
 
+
+// ================================================================================================ //
 // Skills Page Data
+// ================================================================================================ //
+
 export const skillsPageData = {
   title: "My Skills",
   description: "A showcase of my technical skills and expertise in action.",
@@ -632,7 +664,11 @@ export const skillsData: Skill[] = [
   }
 ];
 
+
+// ================================================================================================ //
 // Studio Page Data
+// ================================================================================================ //
+
 export const studioPageData = {
   title: "Welcome to My Studio",
   description: "This is my creative playground. A space for photography, videography, and other artistic works. Here, I blend passion with skill to create unique digital experiences."
