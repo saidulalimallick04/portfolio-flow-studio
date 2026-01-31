@@ -63,7 +63,9 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                 </div>
             )}
             <CardHeader className="flex-grow">
-                <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
+                <Link href={`/projects/${project.id}`} className="hover:underline decoration-primary decoration-2 underline-offset-4">
+                    <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
+                </Link>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
                     <Calendar className="h-4 w-4" />
                     <span>{project.year}</span>
@@ -77,22 +79,29 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                     >
                         {project.description}
                     </CardDescription>
-                    <Button
-                        variant="link"
-                        size="sm"
-                        className="h-auto p-0 mt-1 text-xs text-muted-foreground hover:text-foreground"
-                        onClick={() => setIsExpanded(!isExpanded)}
-                    >
-                        {isExpanded ? (
-                            <span className="flex items-center">
-                                Show less <ChevronUp className="ml-1 h-3 w-3" />
-                            </span>
-                        ) : (
-                            <span className="flex items-center">
-                                Show more <ChevronDown className="ml-1 h-3 w-3" />
-                            </span>
-                        )}
-                    </Button>
+                    <div className="flex justify-between items-center mt-2">
+                        <Button
+                            variant="link"
+                            size="sm"
+                            className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
+                            onClick={() => setIsExpanded(!isExpanded)}
+                        >
+                            {isExpanded ? (
+                                <span className="flex items-center">
+                                    Show less <ChevronUp className="ml-1 h-3 w-3" />
+                                </span>
+                            ) : (
+                                <span className="flex items-center">
+                                    Show more <ChevronDown className="ml-1 h-3 w-3" />
+                                </span>
+                            )}
+                        </Button>
+                        <Button variant="link" size="sm" asChild className="h-auto p-0 text-primary font-semibold">
+                            <Link href={`/projects/${project.id}`}>
+                                View Details <ArrowUpRight className="ml-1 h-3 w-3" />
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
             </CardHeader>
             <CardContent className="mt-auto">

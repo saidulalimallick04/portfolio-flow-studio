@@ -24,8 +24,6 @@ export const homePageData = {
   },
 };
 
-
-
 // Profiles Data
 export const profilesData: Profile[] = [
   {
@@ -60,118 +58,289 @@ export const profilesData: Profile[] = [
   },
   {
     id: 6,
+    name: "Kaggle",
+    url: "https://kaggle.com/saidulalimallick04",
+    icon: "kaggle",
+  },
+  {
+    id: 10,
     name: "Email",
-    url: "mailto:saidulalimallick@gmail.com",
+    url: "mailto:developersami44@gmail.com",
     icon: "email",
   },
 ];
 
 
 export const projectsData: Project[] = [
+  // Full Stack Projects
   {
-    id: 1,
+    id: "PROJ_FULLSTACK_01",
+    category: "Full Stack",
+    status: "incomplete",
+    year: "2025",
+
     title: "Apex-Sky - Projects Management",
     description: "A user-friendly web-application that allows users to manage projects, details, collaborations etc. in one platform and also using API they can fetch their projects from the platform to other sites as per their needs. (Still working)",
-    tags: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "Bootstrap"],
-    category: "Full Stack",
-    imageUrl: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=800&auto=format&fit=crop",
-    imageHint: "project management dashboard",
+    tags: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "Bootstrap", "REST API", "Dashboard"],
+
+    imageHint: "project-management-dashboard",
+    imageUrl: "/projects/apex-sky.png",
     liveUrl: "https://apexsky.onrender.com",
     githubUrl: "https://github.com/saidulalimallick04/apexsky-projects-management",
-    alternativeLink: "https://apexsky-backup.onrender.com",
-    status: "incomplete",
-    year: "2025",
+    alternativeLink: "https://apexsky.onrender.com",
   },
   {
-    id: 2,
-    title: "AI-Based Animal Classifier",
-    description: "Implements a deep learning-based classifier to distinguish between cats and dogs. Users can upload images for instant classification result.",
-    tags: ["Deep Learning", "Python", "Streamlit"],
-    category: "AI",
-    imageUrl: "https://images.unsplash.com/photo-1555685812-4b943f3bec0f?q=80&w=800&auto=format&fit=crop",
-    imageHint: "ai neural network",
-    liveUrl: "#",
-    githubUrl: "#",
+    id: "PROJ_FULLSTACK_02",
+    category: "Full Stack",
     status: "completed",
     year: "2025",
-  },
-  {
-    id: 3,
-    title: "To-Do-X – Task Management",
+
+    title: "To-Do-X - Task Management",
     description: "A user-friendly task scheduling web application, where user can create, complete, track task progress. So that they can always stay organized by accessing from anywhere using authentication.",
-    tags: ["Python", "Django", "SQLite3", "HTML", "CSS", "Bootstrap"],
-    category: "Web",
-    imageUrl: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=800&auto=format&fit=crop",
-    imageHint: "task list app",
-    liveUrl: "#",
-    githubUrl: "#",
+    tags: ["Python", "Django", "SQLite3", "HTML", "CSS", "Bootstrap", "Task Management"],
+
+    imageHint: "task-list-app",
+    imageUrl: "/projects/to-do-x.png",
+    liveUrl: "https://to-do-x.onrender.com",
+    alternativeLink: "https://to-do-x.onrender.com",
+    githubUrl: "https://github.com/saidulalimallick04/to-do-x",
+  },
+  {
+    id: "PROJ_FULLSTACK_03",
+    category: "Full Stack",
     status: "completed",
     year: "2025",
+
+    title: "artfolio-creative-showcase",
+    description: "ArtFolio is a modern, visually appealing web application designed as a creative showcase for artists to share their digital artwork and connect with a community of fellow creators and enthusiasts.",
+    tags: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Portfolio", "Showcase"],
+
+    imageHint: "artfolio",
+    imageUrl: "/projects/artfolio.png",
+    liveUrl: "https://artfolio.saidulalimallick.studio/",
+    alternativeLink: "https://artfolio-creative-showcase.vercel.app/",
+    githubUrl: "https://github.com/saidulalimallick04/artfolio-creative-showcase",
   },
   {
-    id: 4,
-    title: "Bangalore House Price Prediction",
-    description: "AI model to predict house prices in Bangalore.",
-    tags: ["AI", "Machine Learning"],
-    category: "AI",
-    imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
-    imageHint: "house price prediction",
-    liveUrl: "#",
-    githubUrl: "#",
+    id: "PROJ_FULLSTACK_04",
+    category: "Full Stack",
     status: "completed",
-    year: "2024",
+    year: "2025",
+
+    title: "Heavenly-Bytes",
+    description: "A user-friendly task scheduling web application, where user can create, complete, track task progress. So that they can always stay organized by accessing from anywhere using authentication.",
+    tags: ["Python", "Django", "SQLite3", "HTML", "CSS", "Bootstrap", "Productivity"],
+
+    imageHint: "task-list-app",
+    imageUrl: "/projects/heavenly-bytes.png",
+    liveUrl: "https://heavenly.saidulalimallick.studio/",
+    alternativeLink: "https://heavenly-bytes.netlify.app/",
+    githubUrl: "https://github.com/saidulalimallick04/heavenly-bytes",
   },
+
+  // Frontend Projects
   {
-    id: 5,
-    title: "Diabetes Prediction",
-    description: "Logistic Regression model for diabetes prediction.",
-    tags: ["AI", "Machine Learning", "Logistic Regression"],
-    category: "AI",
-    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
-    imageHint: "diabetes prediction",
-    liveUrl: "#",
-    githubUrl: "#",
+    id: "PROJ_FRONTEND_01",
+    category: "Frontend",
+    status: "completed",
+    year: "2025",
+
+    title: "Ohida's Canvas",
+    description: "Ohida's Canvas is a modern, visually appealing web application designed as a creative showcase for artists to share their digital artwork and connect with a community of fellow creators and enthusiasts.",
+    tags: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Artist Portfolio"],
+
+    imageHint: "code-matrix",
+    imageUrl: "/projects/ohidas-canvas.png",
+    liveUrl: "https://khandakarohida.saidulalimallick.studio/",
+    alternativeLink: "https://khandakarohida.netlify.app/",
+    githubUrl: "https://github.com/saidulalimallick04/artist-khandakar-ohida",
+
+  },
+
+
+  // Backend Projects
+  {
+    id: "PROJ_BACKEND_01",
+    category: "Backend",
     status: "incomplete",
-    year: "2024",
-  },
-  {
-    id: 6,
-    title: "Django User Profile",
+    year: "2025",
+
+    title: "Django User Profile Management System",
     description: "User profile management system built with Django.",
-    tags: ["Django", "Web"],
-    category: "Web",
-    imageUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop",
-    imageHint: "user profile",
+    tags: ["Django", "Python", "SQLite3", "User Management", "Authentication"],
+
+    imageHint: "user-profile",
+    imageUrl: "/projects/django-user-profile.png",
     liveUrl: "#",
-    githubUrl: "#",
+    alternativeLink: "#",
+    githubUrl: "https://github.com/saidulalimallick04/django-user-profile",
+  },
+  {
+    id: "PROJ_BACKEND_02",
+    category: "Backend",
+    status: "completed",
+    year: "2025",
+
+    title: "Smart To-Do API",
+    description: "A user-friendly task scheduling web application, where user can create, complete, track task progress. So that they can always stay organized by accessing from anywhere using authentication.",
+    tags: ["FastAPI", "Python", "MongoDB", "JWT", "uvicorn", "API Development"],
+
+    imageHint: "todo-list",
+    imageUrl: "/projects/smart-to-do-api.png",
+    liveUrl: "https://smart-to-do-api.vercel.app/",
+    alternativeLink: "https://smart-to-do-api.vercel.app/",
+    githubUrl: "https://github.com/saidulalimallick04/smart-to-do-api",
+  },
+  {
+    id: "PROJ_BACKEND_03",
+    category: "Backend",
     status: "incomplete",
-    year: "2024",
-  },
-  {
-    id: 7,
-    title: "SMS Spam Classifier",
-    description: "A machine learning model to classify SMS messages as spam or not spam.",
-    tags: ["Machine Learning", "Python", "NLP"],
-    category: "AI",
-    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-    imageHint: "code matrix",
+    year: "2025",
+
+    title: "KAP ERP API",
+    description: "An API server to store and fetch informations about train possibly. One can Create/Store/update Wheel and Bogie Specifications",
+    tags: ["Python", "Django", "Django Rest Framework", "PostgreSQL", "JWT", "ERP"],
+
+    imageHint: "Train-Details-Storing-API",
+    imageUrl: "/projects/kap-erp-api.png",
     liveUrl: "#",
-    githubUrl: "#",
+    alternativeLink: "#",
+    githubUrl: "https://github.com/saidulalimallick04/KAP-ERP-API",
+  },
+
+  // AI Projects
+  {
+    id: "PROJ_AI_01",
+    category: "AI",
     status: "completed",
-    year: "2024",
+    year: "2025",
+
+    title: "AI-Based Image Classifier",
+    description: "Implements a deep learning-based classifier to distinguish between cats and dogs. Users can upload images for instant classification result.",
+    tags: ["Deep Learning", "Python", "Streamlit", "TensorFlow", "Computer Vision"],
+
+    imageHint: "ai-neural-network",
+    imageUrl: "/projects/ai-image-classifier.png",
+    liveUrl: "#",
+    alternativeLink: "#",
+    githubUrl: "#",
+
   },
   {
-    id: 8,
-    title: "Spotify 50k+ Song Analysis",
-    description: "Exploratory Data Analysis (EDA) of 50k+ Spotify songs.",
-    tags: ["Data Science", "Python", "EDA"],
+    id: "PROJ_AI_02",
     category: "AI",
-    imageUrl: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=800&auto=format&fit=crop",
+    status: "completed",
+    year: "2025",
+
+    title: "Bangalore House Price Prediction Model",
+    description: "AI model to predict house prices in Bangalore.",
+    tags: ["AI", "Machine Learning", "Regression", "Predictive Analytics"],
+
+    imageHint: "house-price-prediction",
+    imageUrl: "/projects/bangalore-house-prices.png",
+    liveUrl: "#",
+    alternativeLink: "#",
+    githubUrl: "#",
+  },
+  {
+    id: "PROJ_AI_03",
+    category: "AI",
+    status: "incomplete",
+    year: "2025",
+
+    title: "Diabetes Prediction Model",
+    description: "Logistic Regression model for diabetes prediction.",
+    tags: ["AI", "Machine Learning", "Logistic Regression", "Healthcare AI"],
+
+    imageHint: "diabetes-prediction",
+    imageUrl: "/projects/diabetes-prediction.png",
+    liveUrl: "#",
+    alternativeLink: "#",
+    githubUrl: "#",
+  },
+
+  // Data Science Projects
+  {
+    id: "PROJ_DATA_01",
+    category: "Data Science",
+    status: "completed",
+    year: "2025",
+
+    title: "Weekend Getaway Ranker",
+    description: "Discover your perfect weekend escape. A smart recommendation engine that ranks travel destinations based on your preferences using a weighted scoring algorithm.",
+    tags: ["Streamlit", "Python", "Weighted Scoring Algorithm", "Recommendation System"],
+
+    imageHint: "code-matrix",
+    imageUrl: "/projects/weekend-getaway-ranker.png",
+    liveUrl: "https://weekend-getaway-ranker.streamlit.app/",
+    alternativeLink: "https://weekend-getaway-ranker.streamlit.app/",
+    githubUrl: "https://github.com/saidulalimallick04/weekend-getaway-ranker",
+  },
+  {
+    id: "PROJ_DATA_02",
+    category: "Data Science",
+    status: "completed",
+    year: "2025",
+
+    title: "Smart Traffic Violation Pattern Detector Dashboard",
+    description: "This project is a Streamlit web application designed to analyze traffic violation data. It provides a user-friendly interface to explore, visualize, and gain insights from traffic violation datasets. Users can upload their own data, perform analysis, and view summaries and trends.",
+    tags: ["Data Science", "Streamlit", "Python", "EDA", "Data Visualization", "Dashboard"],
+
     imageHint: "earphones",
-    liveUrl: "#",
-    githubUrl: "#",
+    imageUrl: "/projects/traffic-violation-dashboard.png",
+    liveUrl: "https://smart-traffic-violation-pattern-detector.streamlit.app/",
+    alternativeLink: "https://smart-traffic-violation-pattern-detector.streamlit.app/",
+    githubUrl: "https://github.com/saidulalimallick04/smart-traffic-violation-pattern-detector",
+  },
+  {
+    id: "PROJ_DATA_03",
+    category: "Data Science",
     status: "completed",
-    year: "2024",
+    year: "2025",
+
+    title: "Tenders Data Extraction",
+    description: "This project is a Python script that scrapes public tender data from the CPWD eTender website, specifically from the 'New Tenders → All' section. It uses Selenium WebDriver to extract the latest tender listings (first N tenders, default: 20) and saves the relevant details into a CSV file.",
+    tags: ["Python", "Selenium", "Web Scraping", "CSV", "Automation"],
+
+    imageHint: "code-matrix",
+    imageUrl: "/projects/tenders-data-extraction.png",
+    liveUrl: "#",
+    alternativeLink: "#",
+    githubUrl: "https://github.com/saidulalimallick04/tenders-data-extraction",
+  },
+  {
+    id: "PROJ_DATA_04",
+    category: "Data Science",
+    status: "completed",
+    year: "2025",
+
+    title: "ABC Loyalty Points Analysis",
+    description: "Analysis on loyalty points of individual players based on their game played, deposit, withdrawal.",
+    tags: ["Python", "Pandas", "Data Analysis", "CSV", "Analytics"],
+
+    imageHint: "code-matrix",
+    imageUrl: "/projects/abc-loyalty-points.png",
+    liveUrl: "#",
+    alternativeLink: "#",
+    githubUrl: "https://github.com/saidulalimallick04/abc-loyalty-points-analysis",
+  },
+
+  // Game Projects
+  {
+    id: "PROJ_GAME_01",
+    category: "Game",
+    status: "incomplete",
+    year: "2025",
+
+    title: "Furfuri Nagar Adventure",
+    description: "",
+    tags: ["React", "Three.js", "TypeScript", "CSS", "HTML", "Game Development"],
+
+    imageHint: "Furfuri-Nagar-Adventure",
+    imageUrl: "/projects/furfuri-nagar-adventure.png",
+    liveUrl: "#",
+    alternativeLink: "#",
+    githubUrl: "https://github.com/saidulalimallick04/furfuri-nagar-adventure",
   },
 ];
 
@@ -180,11 +349,11 @@ export const collaboratorsPageData = {
   title: "I Have Worked With ...",
   description: "A diverse team of passionate professionals with unique skills driving innovation and excellence in every project.",
   heroImages: [
-    { imageUrl: "https://picsum.photos/seed/602/400/400", imageHint: "professional person" },
-    { imageUrl: "https://picsum.photos/seed/603/400/400", imageHint: "creative office" },
-    { imageUrl: "https://picsum.photos/seed/604/400/400", imageHint: "thoughtful person" },
-    { imageUrl: "https://picsum.photos/seed/602/400/400", imageHint: "professional person" },
-    { imageUrl: "https://picsum.photos/seed/603/400/400", imageHint: "creative office" },
+    { imageUrl: "https://picsum.photos/seed/602/400/400", imageHint: "professional-person" },
+    { imageUrl: "https://picsum.photos/seed/603/400/400", imageHint: "creative-office" },
+    { imageUrl: "https://picsum.photos/seed/604/400/400", imageHint: "thoughtful-person" },
+    { imageUrl: "https://picsum.photos/seed/602/400/400", imageHint: "professional-person" },
+    { imageUrl: "https://picsum.photos/seed/603/400/400", imageHint: "creative-office" },
   ] as HeroImage[],
   team: {
     title: "Worked or Collaborated With ...",
@@ -199,7 +368,7 @@ export const collaboratorsData: Collaborator[] = [
     title: "Project Manager",
     summary: "Dedicated to ensuring customer satisfaction and success, with a proactive approach to client support and retention.",
     imageUrl: "https://github.com/supriyakhanra.png",
-    imageHint: "professional person",
+    imageHint: "professional-person",
     twitter: "https://twitter.com/supriyakhanra",
     linkedin: "https://linkedin.com/in/supriyakhanra",
     github: "https://github.com/supriyakhanra",
@@ -211,7 +380,7 @@ export const collaboratorsData: Collaborator[] = [
     title: "Software Engineer",
     summary: "Operations specialist with a background in scaling startups, ensuring smooth and efficient company operations.",
     imageUrl: "https://github.com/Anshu370.png",
-    imageHint: "creative office",
+    imageHint: "creative-office",
     twitter: "https://twitter.com/anshugupta",
     linkedin: "https://linkedin.com/in/anshugupta",
     github: "https://github.com/Anshu370",
@@ -223,7 +392,7 @@ export const collaboratorsData: Collaborator[] = [
     title: "Software Engineer",
     summary: "Passionate product manager focused on delivering user-centric solutions that meet market needs.",
     imageUrl: "https://github.com/prangit95.png",
-    imageHint: "thoughtful person",
+    imageHint: "thoughtful-person",
     twitter: "https://twitter.com/pranjaldebnath",
     linkedin: "https://linkedin.com/in/pranjaldebnath",
     github: "https://github.com/prangit95",
@@ -235,7 +404,7 @@ export const collaboratorsData: Collaborator[] = [
     title: "Software Engineer",
     summary: "Technical guru with a passion for developing scalable and secure cloud-based applications.",
     imageUrl: "https://github.com/WanderSusie.png",
-    imageHint: "professional person",
+    imageHint: "professional-person",
     twitter: "https://twitter.com/snehadas",
     linkedin: "https://linkedin.com/in/snehadas",
     github: "https://github.com/WanderSusie",
@@ -258,22 +427,22 @@ export const hobbiesData: Hobby[] = [
     id: 1,
     title: "Explore New Technologies",
     description: "I'm always diving into new tech stacks, libraries, and frameworks to stay on the cutting edge.",
-    imageUrl: "https://picsum.photos/seed/402/600/400",
-    imageHint: "glowing circuit board"
+    imageUrl: "https://cdn.pixabay.com/photo/2017/01/17/03/57/desktop-1985856_1280.jpg",
+    imageHint: "glowing-circuit-board"
   },
   {
     id: 2,
     title: "Watching Animes",
     description: "I enjoy the intricate storytelling and stunning visuals of anime as a way to unwind.",
-    imageUrl: "https://picsum.photos/seed/403/600/400",
-    imageHint: "anime character illustration"
+    imageUrl: "https://cdn.pixabay.com/photo/2023/11/15/13/55/woman-8390124_1280.jpg",
+    imageHint: "anime-character-illustration"
   },
   {
     id: 3,
     title: "Nature Photography & Videography",
     description: "Capturing the beauty of nature through my camera lens is a passion that gets me outdoors.",
-    imageUrl: "https://picsum.photos/seed/404/600/400",
-    imageHint: "camera in nature"
+    imageUrl: "https://cdn.pixabay.com/photo/2022/04/15/07/58/sunset-7133867_1280.jpg",
+    imageHint: "camera-in-nature"
   },
 ];
 
@@ -476,7 +645,7 @@ export const studioData: StudioItem[] = [
     description: "A breathtaking shot of a mountain range at sunrise, capturing the warm glow on the peaks.",
     category: "Photography",
     imageUrl: "https://picsum.photos/seed/1001/600/400",
-    imageHint: "mountain sunrise"
+    imageHint: "mountain-sunrise"
   },
   {
     id: 2,
@@ -484,7 +653,7 @@ export const studioData: StudioItem[] = [
     description: "A dynamic short film showcasing the vibrant nightlife of a bustling city, set to an upbeat electronic track.",
     category: "Videography",
     imageUrl: "https://picsum.photos/seed/1002/600/400",
-    imageHint: "city nightlife"
+    imageHint: "city-nightlife"
   },
   {
     id: 3,
@@ -492,7 +661,7 @@ export const studioData: StudioItem[] = [
     description: "A digital painting exploring the interplay of color and shape, creating a sense of movement and energy.",
     category: "Creative Arts",
     imageUrl: "https://picsum.photos/seed/1003/600/400",
-    imageHint: "abstract painting"
+    imageHint: "abstract-painting"
   },
   {
     id: 4,
@@ -500,7 +669,7 @@ export const studioData: StudioItem[] = [
     description: "The calm waves of the ocean gently washing over a sandy beach at dusk.",
     category: "Photography",
     imageUrl: "https://picsum.photos/seed/1004/600/400",
-    imageHint: "beach sunset"
+    imageHint: "beach-sunset"
   },
   {
     id: 5,
@@ -508,7 +677,7 @@ export const studioData: StudioItem[] = [
     description: "A short, immersive video that takes you on a peaceful walk through a sun-dappled forest.",
     category: "Videography",
     imageUrl: "https://picsum.photos/seed/1005/600/400",
-    imageHint: "forest path"
+    imageHint: "forest-path"
   },
   {
     id: 6,
@@ -516,7 +685,7 @@ export const studioData: StudioItem[] = [
     description: "A detailed digital sketch of a fantasy character, complete with intricate armor and a mysterious aura.",
     category: "Creative Arts",
     imageUrl: "https://picsum.photos/seed/1006/600/400",
-    imageHint: "fantasy character"
+    imageHint: "fantasy-character"
   },
   {
     id: 7,
@@ -524,7 +693,7 @@ export const studioData: StudioItem[] = [
     description: "Capturing the hidden beauty of city architecture through a unique lens.",
     category: "Photography",
     imageUrl: "https://picsum.photos/seed/1007/600/400",
-    imageHint: "city architecture"
+    imageHint: "city-architecture"
   },
   {
     id: 8,
@@ -532,7 +701,7 @@ export const studioData: StudioItem[] = [
     description: "A short documentary-style video showing the creative process behind a recent project.",
     category: "Videography",
     imageUrl: "https://picsum.photos/seed/1008/600/400",
-    imageHint: "film making",
+    imageHint: "film-making",
     youtubeUrl: "https://youtube.com",
     alternativeUrl: "https://vimeo.com"
   },
@@ -542,7 +711,7 @@ export const studioData: StudioItem[] = [
     description: "A surreal digital artwork blending elements of nature and technology.",
     category: "Creative Arts",
     imageUrl: "https://picsum.photos/seed/1009/600/400",
-    imageHint: "surreal landscape",
+    imageHint: "surreal-landscape",
     alternativeUrl: "https://behance.net"
   },
 ];

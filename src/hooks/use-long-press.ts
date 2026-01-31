@@ -60,8 +60,10 @@ export function useLongPress(
 }
 
 const preventDefault = (e: Event) => {
-    if (!('touches' in e)) return;
-    if (e.touches.length < 2 && e.preventDefault) {
-        e.preventDefault();
+    if ('touches' in e) {
+        const touchEvent = e as unknown as TouchEvent;
+        if (touchEvent.touches.length < 2 && e.preventDefault) {
+            e.preventDefault();
+        }
     }
 };

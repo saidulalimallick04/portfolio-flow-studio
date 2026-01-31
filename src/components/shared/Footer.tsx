@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Facebook, Instagram, Mail } from "lucide-react";
+import { Github, Twitter, Linkedin, Facebook, Instagram, Brain, Mail } from "lucide-react";
 import { Container } from "./Container";
 import Link from "next/link";
 import { profilesData } from "@/lib/placeholder-data";
@@ -9,6 +9,7 @@ const iconMap = {
   twitter: Twitter,
   facebook: Facebook,
   instagram: Instagram,
+  kaggle: Brain,
   email: Mail,
 };
 
@@ -18,7 +19,7 @@ export function Footer() {
       <Container className="py-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Saidulalimallick Studio. All rights reserved.
+            &copy; {new Date().getFullYear()} saidulalimallick studio. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {profilesData.map((profile) => {

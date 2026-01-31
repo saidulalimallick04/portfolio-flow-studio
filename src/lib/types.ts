@@ -2,11 +2,11 @@
 import type { LucideIcon } from "lucide-react";
 
 export type Project = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   tags: string[];
-  category: "Full Stack" | "Web" | "AI" | "API" | "Frontend" | "Backend";
+  category: "Full Stack" | "Web" | "AI" | "API" | "Frontend" | "Backend" | "Data Science" | "Game";
   imageUrl: string;
   imageHint: string;
   liveUrl?: string;
@@ -46,7 +46,7 @@ export type Profile = {
   id: number;
   name: string;
   url: string;
-  icon: "github" | "linkedin" | "twitter" | "facebook" | "instagram" | "email";
+  icon: "github" | "linkedin" | "twitter" | "facebook" | "instagram" | "email" | "kaggle";
 };
 
 export type Skill = {

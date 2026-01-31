@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Facebook, Instagram, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Facebook, Instagram, Mail, Brain } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -23,6 +23,7 @@ const iconMap = {
   twitter: Twitter,
   facebook: Facebook,
   instagram: Instagram,
+  kaggle: Brain,
   email: Mail,
 };
 

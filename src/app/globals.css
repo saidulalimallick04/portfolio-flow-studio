@@ -4,32 +4,48 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 224 71.4% 4.1%;
-    --card: 210 20% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-    --popover: 210 20% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-    --primary: 220.9 39.3% 11%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-    --accent: 34.9 98.6% 51.2%;
-    --accent-foreground: 210 20% 98%;
+    /* Background: Rice Paper White (Warm, traditional feel) */
+    --background: 36 30% 98%;
+    /* Foreground: Uniform Ink (Deep Navy/Black) */
+    --foreground: 222 47% 12%;
+
+    /* Card: Slightly warmer off-white */
+    --card: 36 30% 96%;
+    --card-foreground: 222 47% 12%;
+    --popover: 36 30% 96%;
+    --popover-foreground: 222 47% 12%;
+
+    /* Primary: Tanjiro Green (Checkerboard Green) */
+    --primary: 146 45% 35%;
+    --primary-foreground: 36 30% 98%;
+
+    /* Secondary: Nezuko Pink (Soft Rose) */
+    --secondary: 330 60% 85%;
+    --secondary-foreground: 330 60% 15%;
+
+    /* Muted: Warm Gray */
+    --muted: 36 10% 90%;
+    --muted-foreground: 222 20% 40%;
+
+    /* Accent: Sun Breathing (Fiery Orange/Red) */
+    --accent: 15 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
+
+    --border: 36 20% 85%;
+    --input: 36 20% 85%;
+    --ring: 146 45% 35%;
+
+    --chart-1: 146 45% 35%;
+    --chart-2: 330 60% 65%;
+    --chart-3: 15 85% 55%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 36 30% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
