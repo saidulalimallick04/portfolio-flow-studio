@@ -21,8 +21,8 @@ export const homePageData = {
     title: "Backend Developer | AI/ML Engineer | Data Science Enthusiast",
     bio: "Building the backbone of modern web applications with Python & Django, while powering the future with Artificial Intelligence and Deep Learning. I design systems that are not just functional, but intelligent, scalable, and secure.",
     paragraphs: [
-      "I am Saidul Ali Mallick (Sami), a dedicated Backend Developer and AI/ML Engineer with a strong passion for building scalable, secure, and efficient digital systems. Currently pursuing a B.Tech in Computer Science with a specialization in Artificial Intelligence and Machine Learning, I bridge the gap between complex algorithms and real-world applications. My technical arsenal is rooted in Python and Django, allowing me to architect robust backend infrastructures and RESTful APIs that power dynamic web applications.",
-      "Beyond traditional web development, I am deeply immersed in the world of Data Science and Deep Learning. I leverage modern tools like TensorFlow, Streamlit, and Pandas to create intelligent solutions—from image classifiers to predictive analytics models. Whether it's optimizing database queries with PostgreSQL, designing seamless user experiences with React and Next.js, or automating data pipelines, I am driven by curiosity and a commitment to innovation. My goal is to craft software that not only solves problems but also delivers a premium, high-performance user experience.",
+      "I am Saidul Ali Mallick (Sami), a dedicated Backend Developer and AI/ML Engineer at Pathvex Digital Solutions (pathvex.in) with a strong passion for building scalable, secure, and efficient digital systems. Currently pursuing a B.Tech in Computer Science with a specialization in Artificial Intelligence and Machine Learning, I bridge the gap between complex algorithms and real-world applications. My technical arsenal is rooted in Python and Django, allowing me to architect robust backend infrastructures and RESTful APIs that power dynamic web applications.",
+      "Beyond traditional web development, I am deeply immersed in the world of Data Science and Deep Learning. I leverage modern tools like TensorFlow, Streamlit, and Pandas to create intelligent solutions—from image classifiers to predictive analytics models. Whether it's optimizing database queries with PostgreSQL, engineering client solutions at Pathvex Digital Solutions, designing seamless user experiences with React and Next.js, or automating data pipelines, I am driven by curiosity and a commitment to innovation. My goal is to craft software that not only solves problems but also delivers a premium, high-performance user experience.",
     ],
   },
 };
@@ -485,6 +485,14 @@ export const journeyPageData = {
 };
 
 export const journeyData: Journey[] = [
+  {
+    id: 0,
+    date: "2025 - Present",
+    title: "Backend & AI/ML Engineer",
+    company: "Pathvex Digital Solutions (pathvex.in)",
+    description: "Architecting and maintaining scalable backend systems, high-throughput RESTful APIs, and intelligent data systems for enterprise digital services.",
+    icon: Briefcase,
+  },
   {
     id: 1,
     date: "2022-2026",

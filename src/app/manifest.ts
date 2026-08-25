@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
     return {
         name: 'Saidul Ali Mallick - Portfolio Flow Studio',
         short_name: 'Sami - Flow',
-        description: 'Portfolio of Saidul Ali Mallick - Backend Sage & Creative Developer',
+        description: 'Portfolio of Saidul Ali Mallick - Backend Developer & AI/ML Engineer at Pathvex Digital Solutions (pathvex.in)',
         start_url: '/',
         display: 'standalone',
         background_color: '#0a0a0a', // Matches dark mode background

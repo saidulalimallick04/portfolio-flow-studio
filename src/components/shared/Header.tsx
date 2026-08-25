@@ -26,8 +26,7 @@ import {
   Power,
   Droplets,
   CloudFog,
-  Bug,
-  HandHeart,
+  Bug
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -48,7 +47,6 @@ const visibleLinks = [
 const moreLinks = [
   { href: "/hobbies", label: "Hobbies", icon: Heart },
   { href: "/studio", label: "Studio", icon: Sparkles },
-  { href: "/rent-me-as-boyfriend", label: "Rent Me as Boyfriend", icon: HandHeart },
   { href: "/contact", label: "Contact", icon: Users },
 ];
 

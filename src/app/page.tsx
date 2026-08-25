@@ -1,4 +1,5 @@
 import { About } from "@/components/home/About";
+import { CurrentRole } from "@/components/home/CurrentRole";
 import { Hero } from "@/components/home/Hero";
 import { Profiles } from "@/components/home/Profiles";
 import { Work } from "@/components/home/Work";
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Container>
         <About />
+        <CurrentRole />
         <TopSkills />
         <Work />
         <TopCollaborators />

@@ -18,7 +18,56 @@ export const metadata: Metadata = {
     canonical: './',
   },
   title: "Saidul Ali Mallick | Portfolio Flow",
-  description: "A creative developer portfolio showcasing projects, skills, and my journey in tech.",
+  description: "Portfolio of Saidul Ali Mallick (Sami) - Backend Developer & AI/ML Engineer at Pathvex Digital Solutions (pathvex.in). Designing scalable architectures, secure RESTful APIs, and intelligent data systems.",
+  keywords: [
+    "Saidul Ali Mallick",
+    "Sami",
+    "Pathvex",
+    "Pathvex Digital Solutions",
+    "pathvex.in",
+    "Pathvex developer",
+    "Backend Developer",
+    "AI/ML Engineer",
+    "Python Django Developer",
+    "Full Stack Developer",
+    "Portfolio Flow Studio",
+  ],
+  authors: [{ name: "Saidul Ali Mallick", url: "https://saidulalimallick.studio" }],
+  creator: "Saidul Ali Mallick",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://saidulalimallick.studio",
+    title: "Saidul Ali Mallick | Portfolio Flow",
+    description: "Portfolio of Saidul Ali Mallick (Sami) - Backend Developer & AI/ML Engineer at Pathvex Digital Solutions (pathvex.in).",
+    siteName: "Saidul Ali Mallick Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Saidul Ali Mallick | Portfolio Flow",
+    description: "Backend Developer & AI/ML Engineer at Pathvex Digital Solutions (pathvex.in).",
+    creator: "@saidulmallick04",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saidul Ali Mallick",
+  "alternateName": "Sami",
+  "url": "https://saidulalimallick.studio",
+  "jobTitle": "Backend Developer & AI/ML Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Pathvex Digital Solutions",
+    "url": "https://pathvex.in"
+  },
+  "sameAs": [
+    "https://github.com/saidulalimallick04",
+    "https://www.linkedin.com/in/saidulalimallick04",
+    "https://x.com/saidulmallick04",
+    "https://kaggle.com/saidulalimallick04"
+  ]
 };
 
 export default function RootLayout({
@@ -30,6 +79,10 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="font-body antialiased">
         <ThemeProvider
